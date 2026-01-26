@@ -20,19 +20,19 @@ export const services = [
   export const projects = [
     {
       title: "1Up Blood Donation System",
-      role: "Lead Developer & System Architect",
+      role: "Lead Developer", // Simple and accurate
       status: "Ongoing",
-      description: "A centralized blood donation management system designed to solve inventory inefficiencies. Features include real-time blood tracking, donor scheduling, and automated inventory alerts.",
-      techStack: ["PHP", "MySQL", "Bootstrap", "Architecture"],
+      description: "A digital management system for blood banks. It helps staff track inventory levels in real-time and schedule donors efficiently. Built to replace manual record-keeping.",
+      techStack: ["PHP", "MySQL", "Bootstrap", "Database Design"],
       link: "https://1up-donation.free.nf/?i=1",
       imagePath: "/1up-project.png"
     },
     {
-      title: "Sky Pulse",
-      role: "Collaborator",
+      title: "Sky Pulse Weather App",
+      role: "Mobile Developer",
       status: "Completed",
-      description: "SkyPulse offers accurate weather forecasts in a sleek, friendly app that keeps you informed with personalized alerts and insights.",
-      techStack: ["GitHub", "Collaboration", "Web Dev", "Mobile Application"],
+      description: "A straightforward weather app that provides local forecasts. It connects to weather APIs to show real-time conditions based on the user's location.",
+      techStack: ["Mobile Dev", "API Integration", "UI Design"],
       link: "https://drive.google.com/file/d/1YnaVtw5lgnPo2T6tb5N425dDz4NUeMGP/view?usp=sharing",
       imagePath: "/sky-pulse.png" 
     }
