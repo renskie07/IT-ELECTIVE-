@@ -1,29 +1,99 @@
 ---
-// This is the "Frontmatter" - Server-side Javascript goes here
-const pageTitle = "BSIT Student & Tech VA";
+// src/pages/index.astro
+import ProjectCard from "../components/ProjectCard.astro";
+
+// DATA SOURCE: This acts as your "Database" for now.
+const projects = [
+  {
+    title: "1Up Blood Donation System",
+    role: "Lead Developer & System Architect",
+    status: "Completed",
+    description:
+      "A centralized blood donation management system designed to solve inventory inefficiencies. Features include real-time blood tracking, donor scheduling, and automated inventory alerts. Built to streamline hospital-donor coordination.",
+    techStack: [
+      "PHP/MySQL",
+      "Bootstrap",
+      "System Architecture",
+      "Gantt Planning",
+    ],
+    link: "#", // Link to your repo or Figma later
+  },
+  {
+    title: "Project Antigravity",
+    role: "Collaborator",
+    status: "In Progress",
+    description:
+      "A team-based development initiative exploring advanced web mechanics. Focused on version control best practices and collaborative coding workflows using GitHub Organization standards.",
+    techStack: ["GitHub", "Team Collaboration", "Web Development"],
+    link: "#",
+  },
+];
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Tom Josh</title>
+    <meta name="viewport" content="width=device-width" />
+    <title>BSIT & Technical VA Portfolio</title>
   </head>
-  <body class="bg-slate-900 text-white font-sans">
-    <main class="max-w-4xl mx-auto p-10">
-      <h1 class="text-5xl font-bold text-blue-400 mb-4">Hello, I'm Tom</h1>
-      <p class="text-xl text-gray-300">
-        Bridging the gap between <span class="text-blue-400 font-bold"
-          >Complex Code</span
+  <body class="bg-slate-950 text-slate-200 font-sans">
+    <header class="max-w-5xl mx-auto px-6 py-24">
+      <div class="max-w-2xl">
+        <h1
+          class="text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-6"
         >
-        and <span class="text-green-400 font-bold">Business Strategy</span>.
-      </p>
+          I build <span class="text-blue-500">systems</span> that work.
+        </h1>
+        <p class="text-xl text-slate-400 mb-8 leading-relaxed">
+          BSIT Senior & Technical Virtual Assistant. I bridge the gap between
+          <span class="text-white font-semibold">complex code</span> and
+          <span class="text-white font-semibold">business operations</span>.
+          Specializing in web development, automation, and technical problem
+          solving.
+        </p>
+        <div class="flex gap-4">
+          <a
+            href="mailto:your-email@gmail.com"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all"
+          >
+            Contact Me
+          </a>
+          <a
+            href="#projects"
+            class="border border-slate-700 hover:border-slate-500 text-slate-300 font-bold py-3 px-6 rounded-lg transition-all"
+          >
+            View Work
+          </a>
+        </div>
+      </div>
+    </header>
 
-      <a
-        href="mailto:tomjatn@gmail.com"
-        class="mt-8 inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition"
-      >
-        Hire Me
-      </a>
-    </main>
+    <section id="projects" class="bg-slate-900 py-20">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-white mb-12 flex items-center gap-3">
+          <span class="w-2 h-8 bg-blue-500 rounded-sm"></span>
+          Selected Works
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {
+            projects.map((project) => (
+              <ProjectCard
+                title={project.title}
+                role={project.role}
+                status={project.status as "Completed" | "In Progress"}
+                description={project.description}
+                techStack={project.techStack}
+                link={project.link}
+              />
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-center py-10 text-slate-600 text-sm">
+      <p>&copy; 2026 BSIT Portfolio. Built with Astro & Tailwind.</p>
+    </footer>
   </body>
 </html>
