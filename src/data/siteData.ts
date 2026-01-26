@@ -43,14 +43,14 @@ export const services = [
     title: "Computer Hardware Basics",
     issuer: "Cisco Networking Academy",
     year: "2026",
-    imagePath: "/hardware-basics-cisco.png",
-    link: "https://your-university-link-or-grades.com" 
+    imagePath: "/hardware-basics-cisco.jpg",
+    link: "https://www.credly.com/badges/abbfe97d-e2df-4e78-bf9f-f3b942b4ef68/public_url" 
   },
   {
     title: "Computer Systems Servicing NC II",
     issuer: "TESDA",
     year: "2025",
-    imagePath: "/computer-systems-servicing-nc-ii.png",
+    imagePath: "/computer-systems-servicing-nc-ii.jpg",
     link: "https://t2mis.tesda.gov.ph/Learners/S/770073006C007900510041004D00460067006700550071006E006C0066007400440057004D006D006E006E006C0057006D003600490051004900730051006D0049006200590052004100340055004B003300450073003D00"
   }
 ];
