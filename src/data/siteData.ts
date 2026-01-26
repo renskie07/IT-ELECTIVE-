@@ -50,7 +50,7 @@ export const services = [
     title: "Computer Systems Servicing NC II",
     issuer: "TESDA",
     year: "2025",
-    icon: "📜",
+    imagePath: "/computer-systems-servicing-nc-ii.png",
     link: "https://t2mis.tesda.gov.ph/Learners/S/770073006C007900510041004D00460067006700550071006E006C0066007400440057004D006D006E006E006C0057006D003600490051004900730051006D0049006200590052004100340055004B003300450073003D00"
   }
 ];
