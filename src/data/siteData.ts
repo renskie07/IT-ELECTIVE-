@@ -31,7 +31,7 @@ export const services = [
       title: "Sky Pulse",
       role: "Collaborator",
       status: "Completed",
-      description: "SkyPulse is designed to provide accurate forecasts while feeling like a trusted friend who keeps you informed. With a sleek, user-friendly interface, you can quickly check the weather for your favorite locations, receive personalized alerts, and explore climate insights in a fun and interactive way.",
+      description: "SkyPulse offers accurate weather forecasts in a sleek, friendly app that keeps you informed with personalized alerts and insights.",
       techStack: ["GitHub", "Collaboration", "Web Dev", "Mobile Application"],
       link: "https://drive.google.com/file/d/1YnaVtw5lgnPo2T6tb5N425dDz4NUeMGP/view?usp=sharing",
       imagePath: "/sky-pulse.png" 
