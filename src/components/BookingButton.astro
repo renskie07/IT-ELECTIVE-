@@ -1,0 +1,39 @@
+---
+// src/components/BookingButton.astro
+interface Props {
+  url: string; // Your specific Calendly link
+}
+
+const { url } = Astro.props;
+---
+
+<link
+  href="https://assets.calendly.com/assets/external/widget.css"
+  rel="stylesheet"
+/>
+
+<button
+  id="calendly-trigger"
+  data-url={url}
+  class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all hover:shadow-lg hover:shadow-blue-500/25 flex items-center gap-2"
+>
+  <span>📅</span> Book a Discovery Call
+</button>
+
+<script
+  is:inline
+  src="https://assets.calendly.com/assets/external/widget.js"
+  async></script>
+
+<script>
+  // We use a safe event listener so it works perfectly with Astro
+  const button = document.getElementById("calendly-trigger");
+
+  if (button) {
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+      // @ts-ignore - Calendly is loaded globally by the script above
+      Calendly.initPopupWidget({ url: button.dataset.url });
+    });
+  }
+</script>

@@ -2,10 +2,12 @@
 // src/pages/index.astro
 import ProjectCard from "../components/ProjectCard.astro";
 import ServiceCard from "../components/ServiceCard.astro";
+import BookingButton from "../components/BookingButton.astro";
 
 // CLEAN IMPORT: We pull the data from our external store
 // This replaces the big list you had before.
 import { projects, services } from "../data/siteData";
+const MY_CALENDLY_LINK = "https://calendly.com/tomjatn/30min";
 ---
 
 <html lang="en">
@@ -44,13 +46,13 @@ import { projects, services } from "../data/siteData";
             href="mailto:your-email@gmail.com"
             class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all hover:shadow-lg hover:shadow-blue-500/25"
           >
-            Let's Talk
+            Contact Me
           </a>
           <a
             href="#projects"
             class="border border-slate-700 hover:border-slate-500 text-slate-300 font-bold py-3 px-8 rounded-full transition-all"
           >
-            View Work
+            My Work
           </a>
         </div>
       </div>
