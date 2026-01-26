@@ -1,0 +1,28 @@
+---
+// src/components/ServiceCard.astro
+interface Props {
+  title: string;
+  icon: string;
+  description: string;
+}
+
+const { title, icon, description } = Astro.props;
+---
+
+<div
+  class="p-6 bg-slate-900 border border-slate-800 rounded-lg hover:border-blue-500/50 transition-all group hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-900/10"
+>
+  <div
+    class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300 filter drop-shadow-md"
+  >
+    {icon}
+  </div>
+  <h3
+    class="text-xl font-bold text-slate-100 mb-2 group-hover:text-blue-400 transition-colors"
+  >
+    {title}
+  </h3>
+  <p class="text-slate-400 text-sm leading-relaxed">
+    {description}
+  </p>
+</div>
