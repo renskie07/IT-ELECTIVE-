@@ -16,7 +16,7 @@ export const services = [
       description: "Managing databases, hosting environments, and troubleshooting software issues. I handle the tech headaches so you don't have to."
     }
   ];
-  
+
   export const projects = [
     {
       title: "1Up Blood Donation System",
@@ -37,3 +37,20 @@ export const services = [
       imagePath: "/sky-pulse.png" 
     }
   ];
+
+  export const credentials = [
+  {
+    title: "Computer Hardware Basics",
+    issuer: "Cisco Networking Academy",
+    year: "2026",
+    imagePath: "/hardware-basics-cisco.png",
+    link: "https://your-university-link-or-grades.com" 
+  },
+  {
+    title: "Computer Systems Servicing NC II",
+    issuer: "TESDA",
+    year: "2025",
+    icon: "📜",
+    link: "https://t2mis.tesda.gov.ph/Learners/S/770073006C007900510041004D00460067006700550071006E006C0066007400440057004D006D006E006E006C0057006D003600490051004900730051006D0049006200590052004100340055004B003300450073003D00"
+  }
+];
