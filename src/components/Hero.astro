@@ -1,17 +1,29 @@
 ---
+// =============================================================================
+// HERO COMPONENT
+// =============================================================================
+// The main banner section at the top of the homepage.
+// Displays: Badge, heading, description, CTA buttons, and profile image.
+// Content is loaded from: src/data/siteData.ts -> sectionContent.hero
+// =============================================================================
+
 import BookingButton from "./BookingButton.astro";
-import { siteConfig } from "../data/siteData";
+import { siteConfig, sectionContent } from "../data/siteData";
+
+const hero = sectionContent.hero;
 ---
 
 <header class="max-w-6xl mx-auto px-6 py-24 md:py-32 relative overflow-hidden">
-  {/* Modern Technical Background Grid */}
+  <!-- Background Grid Pattern (Parallax) -->
   <div
-    class="absolute inset-0 pointer-events-none opacity-20 bg-[size:30px_30px] bg-[linear-gradient(to_right,#333_1px,transparent_1px),linear-gradient(to_bottom,#333_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"
+    class="parallax-slow absolute inset-0 pointer-events-none opacity-20 bg-[size:30px_30px] bg-[linear-gradient(to_right,#333_1px,transparent_1px),linear-gradient(to_bottom,#333_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"
   >
   </div>
 
   <div class="grid md:grid-cols-2 gap-16 items-center relative z-10">
-    <div>
+    <!-- Left Column: Text Content -->
+    <div class="scroll-slide-left">
+      <!-- Status Badge -->
       <div
         class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-mono tracking-wide uppercase mb-8"
       >
@@ -22,20 +34,23 @@ import { siteConfig } from "../data/siteData";
           <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"
           ></span>
         </span>
-        Technical Solutions Partner
+        {hero.badge}
       </div>
 
+      <!-- Main Heading -->
       <h1
         class="text-5xl md:text-7xl font-bold tracking-tight text-white mb-8 leading-tight"
       >
-        Engineered for <br />
+        {hero.titleLine1}
+        <br />
         <span
           class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400"
         >
-          Performance.
+          {hero.titleLine2}
         </span>
       </h1>
 
+      <!-- Description -->
       <p
         class="text-lg md:text-xl text-neutral-400 mb-10 leading-relaxed max-w-lg"
       >
@@ -47,6 +62,7 @@ import { siteConfig } from "../data/siteData";
         without friction.
       </p>
 
+      <!-- CTA Buttons -->
       <div class="flex flex-wrap gap-4">
         <BookingButton url={siteConfig.calendlyUrl} />
 
@@ -54,7 +70,7 @@ import { siteConfig } from "../data/siteData";
           href={`mailto:${siteConfig.email}`}
           class="group flex items-center gap-3 px-6 py-3.5 rounded-full border border-neutral-700 hover:border-neutral-500 hover:bg-neutral-800 transition-all text-neutral-300 hover:text-white font-medium"
         >
-          <span>Get in Touch</span>
+          <span>{hero.secondaryCta}</span>
           <svg
             class="w-4 h-4 text-neutral-500 group-hover:text-white transition-colors group-hover:translate-x-1 duration-300"
             fill="none"
@@ -71,19 +87,22 @@ import { siteConfig } from "../data/siteData";
       </div>
     </div>
 
+    <!-- Right Column: Profile Image -->
     <div
-      class="relative group order-first md:order-last flex justify-center md:justify-end"
+      class="scroll-slide-right relative group order-first md:order-last flex justify-center md:justify-end"
     >
+      <!-- Glow Effect -->
       <div
         class="absolute inset-0 bg-gradient-to-r from-blue-600 to-teal-600 rounded-full blur-2xl opacity-20 group-hover:opacity-50 transition duration-1000 group-hover:duration-200 w-3/4 mx-auto md:mr-0"
       >
       </div>
+      <!-- Image Container -->
       <div
         class="relative rounded-2xl bg-neutral-900 border border-neutral-800 overflow-hidden w-64 h-64 md:w-80 md:h-80 shadow-2xl rotate-3 group-hover:rotate-0 transition-all duration-500"
       >
         <img
           src="/me.png"
-          alt="Tom Joshua"
+          alt={siteConfig.name}
           class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100"
         />
       </div>

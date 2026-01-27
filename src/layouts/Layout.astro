@@ -1,4 +1,12 @@
 ---
+// =============================================================================
+// LAYOUT COMPONENT
+// =============================================================================
+// The base HTML layout wrapper for all pages.
+// Includes: HTML head with meta tags, fonts, global styles, body wrapper.
+// Props: title, description (optional)
+// =============================================================================
+
 import "../styles/global.css";
 
 interface Props {
@@ -10,6 +18,9 @@ const {
   title,
   description = "I bridge the gap between complex code and business operations. A portfolio of technical automation, web development, and system architecture.",
 } = Astro.props;
+
+// Site URL for meta tags
+const siteUrl = "https://tomjoshuas-projects.vercel.app/";
 ---
 
 <html lang="en">
@@ -19,37 +30,32 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
+    <!-- Primary Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
 
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://tomjoshuas-projects.vercel.app/" />
+    <meta property="og:url" content={siteUrl} />
     <meta property="og:title" content={title} />
     <meta
       property="og:description"
       content="BSIT Senior & Technical Virtual Assistant. Specializing in PHP/MySQL, Automation, and System Architecture."
     />
-    <meta
-      property="og:image"
-      content="https://tomjoshuas-projects.vercel.app/social-preview.png"
-    />
+    <meta property="og:image" content={`${siteUrl}social-preview.png`} />
 
+    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta
-      property="twitter:url"
-      content="https://tomjoshuas-projects.vercel.app/"
-    />
+    <meta property="twitter:url" content={siteUrl} />
     <meta property="twitter:title" content={title} />
     <meta
       property="twitter:description"
       content="I bridge the gap between complex code and business operations."
     />
-    <meta
-      property="twitter:image"
-      content="https://tomjoshuas-projects.vercel.app/social-preview.png"
-    />
+    <meta property="twitter:image" content={`${siteUrl}social-preview.png`} />
 
+    <!-- Google Fonts: Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -62,5 +68,71 @@ const {
     class="text-neutral-200 font-sans antialiased selection:bg-indigo-500 selection:text-white pt-20"
   >
     <slot />
+
+    <!-- Scroll Animation & Parallax Script -->
+    <script>
+      // =======================================================================
+      // SCROLL-TRIGGERED ANIMATIONS (Intersection Observer)
+      // =======================================================================
+      document.addEventListener("DOMContentLoaded", () => {
+        // Select all elements with scroll animation classes
+        const scrollElements = document.querySelectorAll(
+          ".scroll-fade, .scroll-slide-left, .scroll-slide-right, .scroll-scale",
+        );
+
+        // Create observer with options
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                // Optional: stop observing after animation
+                // observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.1, // Trigger when 10% visible
+            rootMargin: "0px 0px -50px 0px", // Trigger slightly before fully in view
+          },
+        );
+
+        // Observe all scroll elements
+        scrollElements.forEach((el) => observer.observe(el));
+
+        // =======================================================================
+        // PARALLAX EFFECT (subtle movement on scroll)
+        // =======================================================================
+        const parallaxElements = document.querySelectorAll(
+          ".parallax-slow, .parallax-medium",
+        );
+
+        if (parallaxElements.length > 0) {
+          let ticking = false;
+
+          const updateParallax = () => {
+            const scrollY = window.scrollY;
+
+            parallaxElements.forEach((el) => {
+              const element = el as HTMLElement;
+              const speed = element.classList.contains("parallax-slow")
+                ? 0.05
+                : 0.1;
+              const yPos = -(scrollY * speed);
+              element.style.transform = `translateY(${yPos}px)`;
+            });
+
+            ticking = false;
+          };
+
+          window.addEventListener("scroll", () => {
+            if (!ticking) {
+              requestAnimationFrame(updateParallax);
+              ticking = true;
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>

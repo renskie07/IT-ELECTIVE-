@@ -1,37 +1,43 @@
 ---
-// src/pages/index.astro
+// =============================================================================
+// INDEX PAGE (Homepage)
+// =============================================================================
+// The main landing page of the portfolio.
+// Sections: Hero, Tech Stack, Services, Experience, Booking, Footer
+// Data is loaded from: src/data/siteData.ts
+// =============================================================================
+
 import Layout from "../layouts/Layout.astro";
 import ServiceCard from "../components/ServiceCard.astro";
 import ExperienceItem from "../components/ExperienceItem.astro";
-import TimelineItem from "../components/TimelineItem.astro";
 import Hero from "../components/Hero.astro";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
+import BookingSection from "../components/BookingSection.astro";
+import TechStack from "../components/TechStack.astro";
 
-// DATA IMPORT
-import {
-  workExperience,
-  services,
-  credentials,
-  sectionContent,
-} from "../data/siteData";
+import { workExperience, services, sectionContent } from "../data/siteData";
 ---
 
 <Layout title="Tom Joshua | IT Specialist & Technical VA">
   <Navbar />
   <Hero />
+  <TechStack />
 
+  <!-- ===== SERVICES SECTION ===== -->
   <section
     id="services"
     class="py-24 relative bg-neutral-900/30 backdrop-blur-sm border-y border-white/5"
   >
     <div class="max-w-6xl mx-auto px-6">
+      <!-- Section Title -->
       <h2
-        class="text-sm font-bold text-neutral-500 uppercase tracking-widest mb-12 text-center"
+        class="scroll-fade text-sm font-bold text-neutral-500 uppercase tracking-widest mb-12 text-center"
       >
         {sectionContent.services.title}
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Services Grid -->
+      <div class="scroll-fade grid grid-cols-1 md:grid-cols-3 gap-6">
         {
           services.map((service) => (
             <ServiceCard
@@ -45,11 +51,13 @@ import {
     </div>
   </section>
 
-  <!-- Work Experience Section -->
+  <!-- ===== WORK EXPERIENCE SECTION ===== -->
   <section id="experience" class="py-32 relative">
+    <!-- Background Overlay -->
     <div class="absolute inset-0 bg-white/[0.02] -z-10"></div>
     <div class="max-w-6xl mx-auto px-6">
-      <div class="mb-20 text-center">
+      <!-- Section Header -->
+      <div class="scroll-fade mb-20 text-center">
         <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
           {sectionContent.experience.title}
         </h2>
@@ -58,13 +66,15 @@ import {
         </p>
       </div>
 
+      <!-- Timeline Container -->
       <div class="relative">
-        <!-- Vertical Line Background for the whole section -->
+        <!-- Vertical Line (Desktop center line) -->
         <div
           class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/5 to-transparent -translate-x-1/2"
         >
         </div>
 
+        <!-- Experience Items -->
         <div class="space-y-0">
           {
             workExperience.map((job, index) => (
@@ -83,33 +93,6 @@ import {
     </div>
   </section>
 
-  <!-- Education Section: Timeline Layout -->
-  <section
-    id="education"
-    class="py-24 bg-neutral-900/30 backdrop-blur-sm border-t border-white/5"
-  >
-    <div class="max-w-4xl mx-auto px-6">
-      <h2
-        class="text-sm font-bold text-neutral-500 uppercase tracking-widest mb-16 text-center"
-      >
-        {sectionContent.education.title}
-      </h2>
-      <div class="max-w-3xl mx-auto">
-        {
-          credentials.map((cred, index) => (
-            <TimelineItem
-              title={cred.title}
-              issuer={cred.issuer}
-              year={cred.year}
-              link={cred.link}
-              imagePath={cred.imagePath}
-              isLast={index === credentials.length - 1}
-            />
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
+  <BookingSection />
   <Footer />
 </Layout>

@@ -1,15 +1,24 @@
 ---
+// =============================================================================
+// NAVBAR COMPONENT
+// =============================================================================
+// Fixed navigation bar at the top of every page.
+// Includes: Logo/branding, navigation links, contact button, mobile menu.
+// Content is loaded from: src/data/siteData.ts -> siteConfig, navLinks
+// =============================================================================
+
 import { siteConfig, navLinks } from "../data/siteData";
 ---
 
 <nav
   class="fixed top-0 left-0 right-0 z-50 bg-neutral-950/50 backdrop-blur-lg border-b border-white/5"
 >
-  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+  <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+    <!-- Logo / Branding -->
     <div>
       <a href="/" class="block group">
         <span
-          class="text-white font-bold text-xl tracking-tight block group-hover:text-indigo-400 transition-colors"
+          class="text-white font-bold text-xl tracking-tight block transition-colors"
           >{siteConfig.name}</span
         >
         <span
@@ -20,20 +29,24 @@ import { siteConfig, navLinks } from "../data/siteData";
     </div>
 
     <!-- Desktop Navigation -->
-    <div class="hidden md:flex items-center gap-8">
-      {
-        navLinks.map((link) => (
-          <a
-            href={link.href}
-            class="text-sm font-medium text-neutral-400 hover:text-white transition-colors"
-          >
-            {link.name}
-          </a>
-        ))
-      }
+    <div class="hidden md:flex items-center gap-10">
+      <!-- Nav Links -->
+      <div class="flex items-center gap-8">
+        {
+          navLinks.map((link) => (
+            <a
+              href={link.href}
+              class="text-sm font-medium text-neutral-400 hover:text-white transition-colors"
+            >
+              {link.name}
+            </a>
+          ))
+        }
+      </div>
+      <!-- Contact Button -->
       <a
         href={`mailto:${siteConfig.email}`}
-        class="px-4 py-2 text-sm font-bold text-neutral-950 bg-white rounded-full hover:bg-neutral-200 transition-colors"
+        class="px-6 py-2.5 text-sm font-bold text-neutral-950 bg-white rounded-full hover:bg-neutral-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_25px_rgba(255,255,255,0.25)] hover:scale-105"
       >
         Contact Me
       </a>
@@ -43,6 +56,7 @@ import { siteConfig, navLinks } from "../data/siteData";
     <button
       id="mobile-menu-btn"
       class="md:hidden p-2 text-neutral-400 hover:text-white focus:outline-none"
+      aria-label="Toggle mobile menu"
     >
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
         ><path
@@ -72,7 +86,7 @@ import { siteConfig, navLinks } from "../data/siteData";
       }
       <a
         href={`mailto:${siteConfig.email}`}
-        class="px-4 py-3 text-center text-sm font-bold text-neutral-950 bg-white rounded-full hover:bg-neutral-200 transition-colors"
+        class="px-4 py-3 text-center text-sm font-bold text-neutral-950 bg-white rounded-full hover:bg-neutral-200 transition-colors shadow-lg shadow-white/10"
       >
         Contact Me
       </a>
@@ -80,12 +94,14 @@ import { siteConfig, navLinks } from "../data/siteData";
   </div>
 </nav>
 
+<!-- Mobile Menu Toggle Script -->
 <script>
   const btn = document.getElementById("mobile-menu-btn");
   const menu = document.getElementById("mobile-menu");
   const links = document.querySelectorAll(".mobile-link");
 
   if (btn && menu) {
+    // Toggle menu on button click
     btn.addEventListener("click", () => {
       menu.classList.toggle("hidden");
     });
