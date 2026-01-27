@@ -10,19 +10,23 @@ const { title, icon, description } = Astro.props;
 ---
 
 <div
-  class="p-6 bg-neutral-900 border border-neutral-800 rounded-lg hover:border-blue-500/50 transition-all group hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-900/10"
+  class="relative p-6 rounded-2xl bg-neutral-900/40 border border-white/5 backdrop-blur-sm hover:border-indigo-500/30 transition-all duration-300 group hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-500/10 overflow-hidden"
 >
   <div
-    class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300 filter drop-shadow-md"
+    class="absolute inset-0 bg-gradient-to-br from-indigo-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+  >
+  </div>
+  <div
+    class="relative z-10 text-4xl mb-4 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 filter drop-shadow-lg"
   >
     {icon}
   </div>
   <h3
-    class="text-xl font-bold text-neutral-100 mb-2 group-hover:text-blue-400 transition-colors"
+    class="relative z-10 text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors"
   >
     {title}
   </h3>
-  <p class="text-neutral-400 text-sm leading-relaxed">
+  <p class="relative z-10 text-neutral-400 text-sm leading-relaxed">
     {description}
   </p>
 </div>

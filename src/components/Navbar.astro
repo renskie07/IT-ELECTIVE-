@@ -1,64 +1,108 @@
 ---
-// src/components/Navbar.astro
-const navLinks = [
-  { name: "Home", href: "#top" },
-  { name: "Services", href: "#services" }, // We will need to add this ID to the section
-  { name: "Projects", href: "#projects" },
-];
+
 ---
 
-<nav class="fixed top-0 w-full z-50 transition-all duration-300" id="navbar">
+<nav
+  class="fixed top-0 left-0 right-0 z-50 bg-neutral-950/50 backdrop-blur-lg border-b border-white/5"
+>
   <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-    <a
-      href="#"
-      class="text-xl font-bold text-white tracking-tight hover:text-blue-400 transition-colors"
-    >
-      Tom Joshua<span class="text-blue-500">.</span>
-    </a>
-
-    <div
-      class="hidden md:flex gap-8 items-center bg-neutral-900/50 backdrop-blur-md px-6 py-2 rounded-full border border-neutral-800/50"
-    >
-      {
-        navLinks.map((link) => (
-          <a
-            href={link.href}
-            class="text-sm font-medium text-neutral-400 hover:text-white transition-colors"
-          >
-            {link.name}
-          </a>
-        ))
-      }
+    <div>
+      <a href="/" class="block group">
+        <span
+          class="text-white font-bold text-xl tracking-tight block group-hover:text-indigo-400 transition-colors"
+          >Tom Joshua.</span
+        >
+        <span
+          class="text-neutral-500 text-xs tracking-wide group-hover:text-neutral-400 transition-colors"
+          >IT Specialist & Technical VA</span
+        >
+      </a>
     </div>
 
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex items-center gap-8">
+      <a
+        href="#services"
+        class="text-sm font-medium text-neutral-400 hover:text-white transition-colors"
+        >Services</a
+      >
+      <a
+        href="#projects"
+        class="text-sm font-medium text-neutral-400 hover:text-white transition-colors"
+        >Projects</a
+      >
+      <a
+        href="#education"
+        class="text-sm font-medium text-neutral-400 hover:text-white transition-colors"
+        >Education</a
+      >
+      <a
+        href="mailto:tomjatn@gmail.com"
+        class="px-4 py-2 text-sm font-bold text-neutral-950 bg-white rounded-full hover:bg-neutral-200 transition-colors"
+      >
+        Contact Me
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden p-2 text-neutral-400 hover:text-white focus:outline-none"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        ><path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path></svg
+      >
+    </button>
+  </div>
+
+  <!-- Mobile Menu Dropdown -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden bg-neutral-950 border-t border-white/5 absolute w-full left-0 top-full p-6 flex flex-col gap-4 shadow-2xl"
+  >
+    <a
+      href="#services"
+      class="mobile-link text-lg font-medium text-neutral-400 hover:text-white transition-colors"
+      >Services</a
+    >
+    <a
+      href="#projects"
+      class="mobile-link text-lg font-medium text-neutral-400 hover:text-white transition-colors"
+      >Projects</a
+    >
+    <a
+      href="#education"
+      class="mobile-link text-lg font-medium text-neutral-400 hover:text-white transition-colors"
+      >Education</a
+    >
     <a
       href="mailto:tomjatn@gmail.com"
-      class="text-sm font-bold bg-white text-black px-4 py-2 rounded-full hover:bg-blue-50 transition-colors"
+      class="px-4 py-3 text-center text-sm font-bold text-neutral-950 bg-white rounded-full hover:bg-neutral-200 transition-colors"
     >
-      Hire Me
+      Contact Me
     </a>
   </div>
 </nav>
 
 <script>
-  // Add a scroll effect: When user scrolls down, darken the background
-  const nav = document.getElementById("navbar");
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  const links = document.querySelectorAll(".mobile-link");
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      nav?.classList.add(
-        "bg-neutral-950/80",
-        "backdrop-blur-lg",
-        "border-b",
-        "border-neutral-800",
-      );
-    } else {
-      nav?.classList.remove(
-        "bg-neutral-950/80",
-        "backdrop-blur-lg",
-        "border-b",
-        "border-neutral-800",
-      );
-    }
-  });
+  if (btn && menu) {
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+
+    // Close menu when a link is clicked
+    links.forEach((link) => {
+      link.addEventListener("click", () => {
+        menu.classList.add("hidden");
+      });
+    });
+  }
 </script>

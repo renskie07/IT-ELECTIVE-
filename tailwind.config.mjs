@@ -2,7 +2,16 @@
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['"Outfit"', 'sans-serif'],
+      },
+      colors: {
+        neutral: {
+          950: '#0a0a0a', // Deeper black
+        }
+      }
+    },
   },
   plugins: [],
 }

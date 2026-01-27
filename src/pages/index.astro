@@ -1,10 +1,11 @@
 ---
 // src/pages/index.astro
-import ProjectCard from "../components/ProjectCard.astro";
+import ProjectSpotlight from "../components/ProjectSpotlight.astro";
 import ServiceCard from "../components/ServiceCard.astro";
-import CredentialCard from "../components/CredentialCard.astro";
+import TimelineItem from "../components/TimelineItem.astro";
 import Hero from "../components/Hero.astro";
 import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
 
 // DATA IMPORT
 import { projects, services, credentials } from "../data/siteData";
@@ -60,20 +61,48 @@ import { projects, services, credentials } from "../data/siteData";
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <style is:global>
+      /* Smooth scroll and padding */
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 5rem;
+      }
+
+      /* Subtle grid background */
+      body {
+        background-color: #050505;
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0.015) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.015) 1px,
+            transparent 1px
+          );
+        background-size: 32px 32px;
+      }
+    </style>
   </head>
 
   <body
-    class="bg-neutral-950 text-neutral-200 font-sans antialiased selection:bg-blue-500 selection:text-white"
+    class="text-neutral-200 font-sans antialiased selection:bg-indigo-500 selection:text-white pt-20"
   >
+    <Navbar />
     <Hero />
 
-    <section class="border-y border-neutral-900/50 bg-neutral-900/20 py-20">
+    <section
+      id="services"
+      class="py-24 relative bg-neutral-900/30 backdrop-blur-sm border-y border-white/5"
+    >
       <div class="max-w-6xl mx-auto px-6">
         <h2
-          class="text-sm font-bold text-neutral-500 uppercase tracking-widest mb-12"
+          class="text-sm font-bold text-neutral-500 uppercase tracking-widest mb-12 text-center"
         >
           My Technical Arsenal
         </h2>
@@ -91,45 +120,25 @@ import { projects, services, credentials } from "../data/siteData";
       </div>
     </section>
 
-    <section class="py-12 border-b border-neutral-900/50">
+    <!-- Projects Section: Spotlight Layout -->
+    <section id="projects" class="py-32 relative">
+      <div class="absolute inset-0 bg-white/[0.02] -z-10"></div>
       <div class="max-w-6xl mx-auto px-6">
-        <h2
-          class="text-sm font-bold text-neutral-500 uppercase tracking-widest mb-8"
-        >
-          Certifications & Education
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {
-            credentials.map((cred) => (
-              <CredentialCard
-                title={cred.title}
-                issuer={cred.issuer}
-                year={cred.year}
-                link={cred.link}
-                imagePath={cred.imagePath}
-              />
-            ))
-          }
-        </div>
-      </div>
-    </section>
-
-    <section
-      id="projects"
-      class="py-24 bg-neutral-900/20 border-t border-neutral-900/50"
-    >
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="flex items-end justify-between mb-12">
-          <div>
-            <h2 class="text-3xl font-bold text-white mb-2">My Projects</h2>
-            <p class="text-neutral-500">Selected Projects & Case Studies</p>
-          </div>
+        <div class="mb-20 text-center">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+            My Projects
+          </h2>
+          <p class="text-neutral-400 max-w-2xl mx-auto">
+            Selected Projects & Case Studies. Each one solves a specific
+            problem.
+          </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="space-y-12">
           {
-            projects.map((project) => (
-              <ProjectCard
+            projects.map((project, index) => (
+              <ProjectSpotlight
+                index={index}
                 title={project.title}
                 role={project.role}
                 status={project.status as "Completed" | "In Progress"}
@@ -137,6 +146,34 @@ import { projects, services, credentials } from "../data/siteData";
                 techStack={project.techStack}
                 link={project.link}
                 imagePath={project.imagePath}
+              />
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section: Timeline Layout -->
+    <section
+      id="education"
+      class="py-24 bg-neutral-900/30 backdrop-blur-sm border-t border-white/5"
+    >
+      <div class="max-w-4xl mx-auto px-6">
+        <h2
+          class="text-sm font-bold text-neutral-500 uppercase tracking-widest mb-16 text-center"
+        >
+          Certifications & Education
+        </h2>
+        <div class="max-w-3xl mx-auto">
+          {
+            credentials.map((cred, index) => (
+              <TimelineItem
+                title={cred.title}
+                issuer={cred.issuer}
+                year={cred.year}
+                link={cred.link}
+                imagePath={cred.imagePath}
+                isLast={index === credentials.length - 1}
               />
             ))
           }
