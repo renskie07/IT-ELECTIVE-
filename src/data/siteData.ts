@@ -1,4 +1,42 @@
 // src/data/siteData.ts
+
+export const siteConfig = {
+  name: "Tom Joshua",
+  title: "IT Specialist & Technical VA",
+  email: "tomjatn@gmail.com",
+  calendlyUrl: "https://calendly.com/tomjatn/30min",
+  social: {
+    github: "https://github.com/ttomon",
+    linkedin: "https://www.linkedin.com/in/tom-joshua-tumanan-221364315/",
+  },
+};
+
+export const navLinks = [
+  { name: "Services", href: "/#services" },
+  { name: "Projects", href: "/projects" },
+  { name: "Education", href: "/#education" },
+];
+
+export const sectionContent = {
+  hero: {
+    badge: "Technical Solutions Partner",
+    title: "Engineered for Performance.",
+    description: "I architect seamless digital ecosystems. From high-performance web apps to automated business logistics, I build the technical backbone that allows your business to scale without friction.",
+    primaryCta: "Book a Discovery Call",
+    secondaryCta: "Get in Touch"
+  },
+  services: {
+    title: "My Technical Arsenal",
+  },
+  experience: {
+    title: "Work Experience",
+    subtitle: "My professional journey and track record of delivering technical solutions."
+  },
+  education: {
+    title: "Certifications & Education"
+  }
+};
+
 export const services = [
     {
       title: "Web Development",
@@ -14,6 +52,26 @@ export const services = [
       title: "System Administration",
       icon: "🛡️",
       description: "Managing databases, hosting environments, and troubleshooting software issues. I handle the tech headaches so you don't have to."
+    },
+    {
+      title: "General Virtual Assistant",
+      icon: "🤝",
+      description: "Reliable administrative support handling email management, scheduling, and customer communication to keep your operations running smoothly."
+    },
+    {
+      title: "Executive Assistant",
+      icon: "👔",
+      description: "High-level support for entrepreneurs. I manage calendars, organize meetings, and handle sensitive communications so you can focus on growth."
+    },
+    {
+      title: "Data Entry Specialist",
+      icon: "⌨️",
+      description: "Accurate and fast data processing. Transcribing information, managing spreadsheets, and maintaining database integrity with high attention to detail."
+    },
+    {
+      title: "SEO Support",
+      icon: "🔎",
+      description: "Optimizing content and managing on-page SEO basics to improve visibility. Keyword research, meta tags, and site audits."
     }
   ];
 
@@ -52,5 +110,22 @@ export const services = [
     year: "2025",
     imagePath: "/computer-systems-servicing-nc-ii.jpg",
     link: "https://t2mis.tesda.gov.ph/Learners/S/770073006C007900510041004D00460067006700550071006E006C0066007400440057004D006D006E006E006C0057006D003600490051004900730051006D0049006200590052004100340055004B003300450073003D00"
+  }
+];
+
+export const workExperience = [
+  {
+    role: "Freelance Technical VA",
+    company: "Upwork / Direct Clients",
+    period: "2026 - Present",
+    description: "Providing technical assistance to businesses, managing CRM systems, and automating workflows. specialized in troubleshooting and system optimization.",
+    skills: ["Automation", "CRM Management", "Technical Support"]
+  },
+  {
+    role: "IT Support Intern",
+    company: "Local Tech Firm",
+    period: "2025 - 2026",
+    description: "Assisted in network configuration, hardware troubleshooting, and software installation for office systems.",
+    skills: ["Network Config", "Hardware Repair", "Windows Admin"]
   }
 ];

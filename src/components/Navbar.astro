@@ -1,5 +1,5 @@
 ---
-
+import { siteConfig, navLinks } from "../data/siteData";
 ---
 
 <nav
@@ -10,34 +10,29 @@
       <a href="/" class="block group">
         <span
           class="text-white font-bold text-xl tracking-tight block group-hover:text-indigo-400 transition-colors"
-          >Tom Joshua.</span
+          >{siteConfig.name}</span
         >
         <span
           class="text-neutral-500 text-xs tracking-wide group-hover:text-neutral-400 transition-colors"
-          >IT Specialist & Technical VA</span
+          >{siteConfig.title}</span
         >
       </a>
     </div>
 
     <!-- Desktop Navigation -->
     <div class="hidden md:flex items-center gap-8">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="text-sm font-medium text-neutral-400 hover:text-white transition-colors"
+          >
+            {link.name}
+          </a>
+        ))
+      }
       <a
-        href="#services"
-        class="text-sm font-medium text-neutral-400 hover:text-white transition-colors"
-        >Services</a
-      >
-      <a
-        href="#projects"
-        class="text-sm font-medium text-neutral-400 hover:text-white transition-colors"
-        >Projects</a
-      >
-      <a
-        href="#education"
-        class="text-sm font-medium text-neutral-400 hover:text-white transition-colors"
-        >Education</a
-      >
-      <a
-        href="mailto:tomjatn@gmail.com"
+        href={`mailto:${siteConfig.email}`}
         class="px-4 py-2 text-sm font-bold text-neutral-950 bg-white rounded-full hover:bg-neutral-200 transition-colors"
       >
         Contact Me
@@ -62,29 +57,26 @@
   <!-- Mobile Menu Dropdown -->
   <div
     id="mobile-menu"
-    class="hidden md:hidden bg-neutral-950 border-t border-white/5 absolute w-full left-0 top-full p-6 flex flex-col gap-4 shadow-2xl"
+    class="hidden md:hidden absolute w-full left-0 top-full shadow-2xl"
   >
-    <a
-      href="#services"
-      class="mobile-link text-lg font-medium text-neutral-400 hover:text-white transition-colors"
-      >Services</a
-    >
-    <a
-      href="#projects"
-      class="mobile-link text-lg font-medium text-neutral-400 hover:text-white transition-colors"
-      >Projects</a
-    >
-    <a
-      href="#education"
-      class="mobile-link text-lg font-medium text-neutral-400 hover:text-white transition-colors"
-      >Education</a
-    >
-    <a
-      href="mailto:tomjatn@gmail.com"
-      class="px-4 py-3 text-center text-sm font-bold text-neutral-950 bg-white rounded-full hover:bg-neutral-200 transition-colors"
-    >
-      Contact Me
-    </a>
+    <div class="bg-neutral-950 border-t border-white/5 p-6 flex flex-col gap-4">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="mobile-link text-lg font-medium text-neutral-400 hover:text-white transition-colors"
+          >
+            {link.name}
+          </a>
+        ))
+      }
+      <a
+        href={`mailto:${siteConfig.email}`}
+        class="px-4 py-3 text-center text-sm font-bold text-neutral-950 bg-white rounded-full hover:bg-neutral-200 transition-colors"
+      >
+        Contact Me
+      </a>
+    </div>
   </div>
 </nav>
 

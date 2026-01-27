@@ -1,0 +1,66 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "I bridge the gap between complex code and business operations. A portfolio of technical automation, web development, and system architecture.",
+} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tomjoshuas-projects.vercel.app/" />
+    <meta property="og:title" content={title} />
+    <meta
+      property="og:description"
+      content="BSIT Senior & Technical Virtual Assistant. Specializing in PHP/MySQL, Automation, and System Architecture."
+    />
+    <meta
+      property="og:image"
+      content="https://tomjoshuas-projects.vercel.app/social-preview.png"
+    />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://tomjoshuas-projects.vercel.app/"
+    />
+    <meta property="twitter:title" content={title} />
+    <meta
+      property="twitter:description"
+      content="I bridge the gap between complex code and business operations."
+    />
+    <meta
+      property="twitter:image"
+      content="https://tomjoshuas-projects.vercel.app/social-preview.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body
+    class="text-neutral-200 font-sans antialiased selection:bg-indigo-500 selection:text-white pt-20"
+  >
+    <slot />
+  </body>
+</html>

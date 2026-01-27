@@ -1,5 +1,4 @@
 ---
-// src/components/ServiceCard.astro
 interface Props {
   title: string;
   icon: string;
@@ -10,23 +9,58 @@ const { title, icon, description } = Astro.props;
 ---
 
 <div
-  class="relative p-6 rounded-2xl bg-neutral-900/40 border border-white/5 backdrop-blur-sm hover:border-indigo-500/30 transition-all duration-300 group hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-500/10 overflow-hidden"
+  class="spotlight-card group relative h-full bg-neutral-950 border border-white/10 rounded-2xl overflow-hidden transition-colors duration-300"
 >
+  <!-- Spotlight Overlay -->
   <div
-    class="absolute inset-0 bg-gradient-to-br from-indigo-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+    class="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+    style="background: radial-gradient(600px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(99, 102, 241, 0.15), transparent 40%);"
   >
   </div>
+
+  <!-- Border Spotlight (Simulated via inner div with margin) -->
   <div
-    class="relative z-10 text-4xl mb-4 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 filter drop-shadow-lg"
+    class="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
+    style="background: radial-gradient(400px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(255, 255, 255, 0.1), transparent 40%);"
   >
-    {icon}
   </div>
-  <h3
-    class="relative z-10 text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors"
+
+  <div
+    class="relative z-20 h-full p-8 flex flex-col bg-neutral-950/80 backdrop-blur-xl"
   >
-    {title}
-  </h3>
-  <p class="relative z-10 text-neutral-400 text-sm leading-relaxed">
-    {description}
-  </p>
+    <!-- Icon Box -->
+    <div
+      class="mb-6 w-12 h-12 flex items-center justify-center text-2xl bg-white/5 rounded-lg border border-white/10 group-hover:bg-indigo-500/10 group-hover:border-indigo-500/30 group-hover:text-indigo-400 group-hover:scale-110 transition-all duration-500 ease-out"
+    >
+      {icon}
+    </div>
+
+    <h3
+      class="text-xl font-bold text-white mb-3 tracking-tight group-hover:text-indigo-200 transition-colors"
+    >
+      {title}
+    </h3>
+
+    <p class="text-neutral-400 text-sm leading-relaxed font-light">
+      {description}
+    </p>
+  </div>
 </div>
+
+<script>
+  // Handlers for specific card instances (handled globally for performance or per-card)
+  // Simple per-card logic:
+  const cards = document.querySelectorAll(".spotlight-card");
+
+  cards.forEach((card) => {
+    const c = card as HTMLElement;
+    c.addEventListener("mousemove", (e) => {
+      const rect = c.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      c.style.setProperty("--mouse-x", `${x}px`);
+      c.style.setProperty("--mouse-y", `${y}px`);
+    });
+  });
+</script>

@@ -1,5 +1,6 @@
 ---
 const currentYear = new Date().getFullYear();
+import { siteConfig } from "../data/siteData";
 ---
 
 <footer
@@ -27,10 +28,10 @@ const currentYear = new Date().getFullYear();
           >
         </h2>
         <a
-          href="mailto:tomjatn@gmail.com"
+          href={`mailto:${siteConfig.email}`}
           class="inline-flex items-center gap-2 bg-white text-neutral-950 font-bold px-8 py-4 rounded-full hover:bg-neutral-200 transition-colors shadow-lg shadow-white/5"
         >
-          Start a Project
+          Get in Touch
           <svg
             class="w-5 h-5"
             fill="none"
@@ -53,7 +54,7 @@ const currentYear = new Date().getFullYear();
         >
         <div class="flex gap-4">
           <a
-            href="https://github.com/ttomon"
+            href={siteConfig.social.github}
             target="_blank"
             class="w-12 h-12 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-white hover:bg-neutral-900 hover:border-indigo-500/50 hover:text-indigo-400 hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500/20 transition-all duration-300"
           >
@@ -64,7 +65,7 @@ const currentYear = new Date().getFullYear();
             >
           </a>
           <a
-            href="https://www.linkedin.com/in/tom-joshua-tumanan-221364315/"
+            href={siteConfig.social.linkedin}
             target="_blank"
             class="w-12 h-12 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-white hover:bg-neutral-900 hover:border-indigo-500/50 hover:text-indigo-400 hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500/20 transition-all duration-300"
           >
@@ -75,7 +76,7 @@ const currentYear = new Date().getFullYear();
             >
           </a>
           <a
-            href="mailto:tomjatn@gmail.com"
+            href={`mailto:${siteConfig.email}`}
             class="w-12 h-12 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-white hover:bg-neutral-900 hover:border-indigo-500/50 hover:text-indigo-400 hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500/20 transition-all duration-300"
           >
             <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"
