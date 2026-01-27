@@ -34,43 +34,47 @@ export const sectionContent = {
   },
   education: {
     title: "Certifications & Education"
+  },
+  projectsPage: {
+    title: "All Projects",
+    description: "A deep dive into my technical portfolio. From full-stack applications to automation scripts, here is what I've built."
   }
 };
 
 export const services = [
     {
       title: "Web Development",
-      icon: "💻",
+      icon: "code",
       description: "Building fast, responsive websites using modern stacks (Astro, React, Tailwind). I don't just use templates; I code custom solutions."
     },
     {
       title: "Technical Automation",
-      icon: "⚙️",
+      icon: "workflow",
       description: "Streamlining business workflows. I connect your tools (CRM, Email, Sheets) to save you hours of manual data entry."
     },
     {
       title: "System Administration",
-      icon: "🛡️",
+      icon: "server",
       description: "Managing databases, hosting environments, and troubleshooting software issues. I handle the tech headaches so you don't have to."
     },
     {
       title: "General Virtual Assistant",
-      icon: "🤝",
+      icon: "user",
       description: "Reliable administrative support handling email management, scheduling, and customer communication to keep your operations running smoothly."
     },
     {
       title: "Executive Assistant",
-      icon: "👔",
+      icon: "briefcase",
       description: "High-level support for entrepreneurs. I manage calendars, organize meetings, and handle sensitive communications so you can focus on growth."
     },
     {
       title: "Data Entry Specialist",
-      icon: "⌨️",
+      icon: "data",
       description: "Accurate and fast data processing. Transcribing information, managing spreadsheets, and maintaining database integrity with high attention to detail."
     },
     {
       title: "SEO Support",
-      icon: "🔎",
+      icon: "search",
       description: "Optimizing content and managing on-page SEO basics to improve visibility. Keyword research, meta tags, and site audits."
     }
   ];

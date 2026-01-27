@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import ProjectSpotlight from "../components/ProjectSpotlight.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
-import { projects } from "../data/siteData";
+import { projects, sectionContent } from "../data/siteData";
 ---
 
 <Layout title="Projects | Tom Joshua">
@@ -12,11 +12,10 @@ import { projects } from "../data/siteData";
   <div class="pt-32 pb-12 px-6">
     <div class="max-w-6xl mx-auto text-center">
       <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
-        All Projects
+        {sectionContent.projectsPage.title}
       </h1>
       <p class="text-neutral-400 max-w-2xl mx-auto text-lg">
-        A deep dive into my technical portfolio. From full-stack applications to
-        automation scripts, here is what I've built.
+        {sectionContent.projectsPage.description}
       </p>
     </div>
   </div>
