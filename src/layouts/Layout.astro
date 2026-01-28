@@ -8,16 +8,14 @@
 // =============================================================================
 
 import "../styles/global.css";
+import { siteConfig } from "../data/siteData";
 
 interface Props {
   title: string;
   description?: string;
 }
 
-const {
-  title,
-  description = "I bridge the gap between complex code and business operations. A portfolio of technical automation, web development, and system architecture.",
-} = Astro.props;
+const { title, description = siteConfig.description } = Astro.props;
 
 // Site URL for meta tags
 const siteUrl = "https://tomjoshuas-projects.vercel.app/";
@@ -39,20 +37,14 @@ const siteUrl = "https://tomjoshuas-projects.vercel.app/";
     <meta property="og:type" content="website" />
     <meta property="og:url" content={siteUrl} />
     <meta property="og:title" content={title} />
-    <meta
-      property="og:description"
-      content="BSIT Senior & Technical Virtual Assistant. Specializing in PHP/MySQL, Automation, and System Architecture."
-    />
+    <meta property="og:description" content={description} />
     <meta property="og:image" content={`${siteUrl}social-preview.png`} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={siteUrl} />
     <meta property="twitter:title" content={title} />
-    <meta
-      property="twitter:description"
-      content="I bridge the gap between complex code and business operations."
-    />
+    <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={`${siteUrl}social-preview.png`} />
 
     <!-- Google Fonts: Outfit -->

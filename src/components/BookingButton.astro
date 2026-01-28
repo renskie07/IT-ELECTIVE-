@@ -2,9 +2,10 @@
 // src/components/BookingButton.astro
 interface Props {
   url: string; // Your specific Calendly link
+  label?: string; // Optional button text
 }
 
-const { url } = Astro.props;
+const { url, label = "Book a Discovery Call" } = Astro.props;
 ---
 
 <link
@@ -18,7 +19,8 @@ const { url } = Astro.props;
   class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3.5 px-8 rounded-full transition-all hover:scale-105 hover:shadow-lg hover:shadow-indigo-500/40 flex items-center gap-2 group"
 >
   <span class="group-hover:rotate-12 transition-transform duration-300">📅</span
-  > Book a Discovery Call
+  >
+  {label}
 </button>
 
 <script

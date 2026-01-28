@@ -11,6 +11,7 @@
 export const siteConfig = {
   name: "Tom Joshua",
   title: "IT Specialist & Technical VA",
+  description: "I bridge the gap between complex code and business operations. A portfolio of technical automation, web development, and system architecture.",
   email: "tomjatn@gmail.com",
   calendlyUrl: "https://calendly.com/tomjatn/30min",
   social: {
