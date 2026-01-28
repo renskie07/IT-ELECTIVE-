@@ -65,9 +65,11 @@ const siteUrl = "https://tomjoshuas-projects.vercel.app/";
   </head>
 
   <body
-    class="text-neutral-200 font-sans antialiased selection:bg-indigo-500 selection:text-white pt-20"
+    class="text-neutral-200 font-sans antialiased selection:bg-indigo-500 selection:text-white pt-20 flex flex-col min-h-screen"
   >
-    <slot />
+    <main class="flex-grow">
+      <slot />
+    </main>
 
     <!-- Scroll Animation & Parallax Script -->
     <script>
