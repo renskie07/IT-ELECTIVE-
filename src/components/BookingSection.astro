@@ -79,8 +79,11 @@ const booking = sectionContent.booking;
       </svg>
     </button>
 
-    <!-- Calendly Widget Container (Initially Hidden) -->
-    <div id="calendar-container" class="relative group hidden">
+    <!-- Calendly Widget Container (Always in DOM, height animated) -->
+    <div
+      id="calendar-container"
+      class="relative group transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0"
+    >
       <!-- Glow Effect -->
       <div
         class="absolute -inset-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-2xl opacity-20 blur transition duration-500 group-hover:opacity-40"
@@ -88,7 +91,7 @@ const booking = sectionContent.booking;
       </div>
       <!-- Widget Wrapper -->
       <div
-        class="relative bg-neutral-900 border border-white/10 rounded-2xl overflow-hidden shadow-2xl"
+        class="relative bg-neutral-900 border border-white/10 rounded-2xl overflow-hidden shadow-2xl mt-8"
       >
         <div
           id="calendly-widget"
@@ -128,49 +131,18 @@ const booking = sectionContent.booking;
           isExpanded = !isExpanded;
 
           if (isExpanded) {
-            calendarContainer.classList.remove("hidden");
-            calendarContainer.style.animation =
-              "slideDown 0.4s ease-out forwards";
+            calendarContainer.classList.remove("max-h-0", "opacity-0");
+            calendarContainer.classList.add("max-h-[800px]", "opacity-100");
             toggleText.textContent = buttonClose;
             toggleArrow.style.transform = "rotate(180deg)";
           } else {
-            calendarContainer.style.animation = "slideUp 0.3s ease-in forwards";
-            setTimeout(() => {
-              calendarContainer.classList.add("hidden");
-            }, 300);
+            calendarContainer.classList.remove("max-h-[800px]", "opacity-100");
+            calendarContainer.classList.add("max-h-0", "opacity-0");
             toggleText.textContent = buttonOpen;
             toggleArrow.style.transform = "rotate(0deg)";
           }
         });
       });
     </script>
-
-    <!-- Animation Styles -->
-    <style>
-      @keyframes slideDown {
-        from {
-          opacity: 0;
-          max-height: 0;
-          transform: translateY(-20px);
-        }
-        to {
-          opacity: 1;
-          max-height: 800px;
-          transform: translateY(0);
-        }
-      }
-      @keyframes slideUp {
-        from {
-          opacity: 1;
-          max-height: 800px;
-          transform: translateY(0);
-        }
-        to {
-          opacity: 0;
-          max-height: 0;
-          transform: translateY(-20px);
-        }
-      }
-    </style>
   </div>
 </section>
