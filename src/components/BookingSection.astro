@@ -136,16 +136,36 @@ const booking = sectionContent.booking;
             toggleText.textContent = buttonClose;
             toggleArrow.style.transform = "rotate(180deg)";
 
-            // Force reload/init of Calendly widget to ensure it renders
+            // Initialize Calendly - handle async loading
+            const initWidget = () => {
+              // @ts-ignore
+              if (window.Calendly) {
+                // @ts-ignore
+                window.Calendly.initInlineWidget({
+                  url: "https://calendly.com/tomjatn/30min",
+                  parentElement: document.getElementById("calendly-widget"),
+                  prefill: {},
+                  utm: {},
+                });
+              } else {
+                console.warn("Calendly not loaded yet");
+              }
+            };
+
             // @ts-ignore
             if (window.Calendly) {
-              // @ts-ignore
-              window.Calendly.initInlineWidget({
-                url: "https://calendly.com/tomjatn/30min",
-                parentElement: document.getElementById("calendly-widget"),
-                prefill: {},
-                utm: {},
-              });
+              initWidget();
+            } else {
+              // If not loaded, wait for it (backup)
+              const checkCalendly = setInterval(() => {
+                // @ts-ignore
+                if (window.Calendly) {
+                  clearInterval(checkCalendly);
+                  initWidget();
+                }
+              }, 100);
+              // Timeout after 5s
+              setTimeout(() => clearInterval(checkCalendly), 5000);
             }
           } else {
             calendarContainer.classList.remove("max-h-[800px]", "opacity-100");
