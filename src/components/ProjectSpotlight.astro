@@ -1,4 +1,14 @@
 ---
+// =============================================================================
+// PROJECT SPOTLIGHT COMPONENT
+// =============================================================================
+// Displays a single project in an alternating layout with image, title,
+// description, tech stack tags, and a CTA button.
+// Used in: src/pages/projects.astro
+// Props: title, role, description, techStack, link, imagePath, status, index
+// Data source: src/data/siteData.ts -> projects
+// =============================================================================
+
 interface Props {
   title: string;
   role: string;
@@ -7,7 +17,7 @@ interface Props {
   link?: string;
   imagePath?: string;
   status: "Completed" | "In Progress";
-  index: number; // Used for alternating layout
+  index: number; // Used for alternating layout (even = image left, odd = image right)
 }
 
 const { title, role, description, techStack, link, imagePath, status, index } =

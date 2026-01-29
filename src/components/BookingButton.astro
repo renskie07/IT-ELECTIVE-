@@ -1,8 +1,16 @@
 ---
-// src/components/BookingButton.astro
+// =============================================================================
+// BOOKING BUTTON COMPONENT
+// =============================================================================
+// A button that opens a Calendly popup for scheduling calls.
+// Used in: src/components/Hero.astro
+// Props: url (Calendly link), label (button text)
+// Requires: Calendly widget CSS and JS (loaded within this component)
+// =============================================================================
+
 interface Props {
   url: string; // Your specific Calendly link
-  label?: string; // Optional button text
+  label?: string; // Optional button text, defaults to "Book a Discovery Call"
 }
 
 const { url, label = "Book a Discovery Call" } = Astro.props;
