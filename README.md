@@ -32,6 +32,7 @@ Most portfolio content is managed in `src/data/siteData.ts`.
 - `/` - homepage, profile, skills, experience, contact
 - `/projects` - detailed project proof
 - `/resume` - dedicated resume placeholder and resume guidance
+- `/education` - IT Elective 6 course topics
 - `/credentials` - certifications and education
 
 ## Verification

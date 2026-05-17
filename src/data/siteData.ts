@@ -16,6 +16,16 @@ export interface Project {
   imageAlt: string;
 }
 
+export interface EducationTopic {
+  number: string;
+  title: string;
+  tag: string;
+  body: string;
+  calloutLabel: string;
+  calloutText: string;
+  note: string;
+}
+
 export const siteConfig = {
   name: "Tom Joshua",
   title: "Web Developer & IT Support Freelancer",
@@ -34,6 +44,7 @@ export const navLinks = [
   { name: "About", href: "/#about" },
   { name: "Projects", href: "/projects" },
   { name: "Resume", href: "/resume" },
+  { name: "Education", href: "/education" },
   { name: "Credentials", href: "/credentials" },
 ];
 
@@ -82,6 +93,14 @@ export const sectionContent = {
     title: "Certifications & Education",
     subtitle:
       "Verified credentials that support my IT troubleshooting and systems foundation.",
+  },
+  educationPage: {
+    kicker: "IT Elective 6",
+    title: "IT Elective 6 - Course Topics",
+    description:
+      "Security models, adversarial thinking, and MITRE ATT&CK tactics from threat frameworks through initial access, execution, persistence, and discovery.",
+    sourceLabel: "Course Reference",
+    sourceUrl: "https://leozata-jpg.github.io/it-elective-6-portfolio/topics.html",
   },
   techStackSection: {
     title: "Technologies & Tools",
@@ -229,6 +248,105 @@ export const credentials = [
     year: "2025",
     imagePath: "/computer-systems-servicing-nc-ii.jpg",
     link: "https://t2mis.tesda.gov.ph/Learners/S/770073006C007900510041004D00460067006700550071006E006C0066007400440057004D006D006E006E006C0057006D003600490051004900730051006D0049006200590052004100340055004B003300450073003D00",
+  },
+];
+
+export const educationTopics: EducationTopic[] = [
+  {
+    number: "1",
+    title: "The Adversarial Hook",
+    tag: "Foundations",
+    body:
+      "Introduces how attackers think and operate by focusing on the adversary mindset, the cyber kill chain, and why defenders need to model threats from an attacker's perspective.",
+    calloutLabel: "Key ideas",
+    calloutText:
+      "Threat actors, attack lifecycle, offense-informed defense, and security awareness as the first control layer.",
+    note:
+      "Sets the foundation for mapping real attacks to structured frameworks like MITRE ATT&CK.",
+  },
+  {
+    number: "2",
+    title: "Security Models & Threat Frameworks",
+    tag: "Frameworks",
+    body:
+      "Covers foundational security models such as confidentiality, integrity, and availability, along with threat frameworks that organize adversary behavior into tactics, techniques, and procedures.",
+    calloutLabel: "Key ideas",
+    calloutText:
+      "CIA triad, defense in depth, MITRE ATT&CK matrix, control mapping, and risk-based prioritization.",
+    note:
+      "Frameworks help teams use a shared language when analyzing incidents and designing controls.",
+  },
+  {
+    number: "3",
+    title: "Initial Access - Phishing",
+    tag: "TA0001 - T1566",
+    body:
+      "Initial Access is the tactic where adversaries enter a network. Phishing uses deceptive email, messages, or sites to trick users into revealing credentials or running malicious content.",
+    calloutLabel: "Defenses",
+    calloutText:
+      "Email filtering, SPF/DKIM/DMARC, user training, MFA, attachment sandboxing, and suspicious-message reporting.",
+    note:
+      "Phishing remains common because it targets human trust instead of only technical controls.",
+  },
+  {
+    number: "4",
+    title: "Initial Access - Exploit Public App",
+    tag: "TA0001 - T1190",
+    body:
+      "Exploit Public-Facing Application targets internet-exposed services such as web servers, VPN portals, and mail gateways by using known or zero-day vulnerabilities to gain a foothold.",
+    calloutLabel: "Defenses",
+    calloutText:
+      "Patch management, WAF, vulnerability scanning, least-privilege services, network segmentation, and disabling unused services.",
+    note:
+      "A common example is exploiting an unpatched web application to drop a web shell.",
+  },
+  {
+    number: "5",
+    title: "Initial Access - Valid Accounts",
+    tag: "TA0001 - T1078",
+    body:
+      "Valid Accounts uses legitimate credentials that may be stolen, guessed, or purchased. The activity can blend in with normal usage and become harder to detect than malware alone.",
+    calloutLabel: "Defenses",
+    calloutText:
+      "Strong password policies, MFA, account lockout, privileged access management, anomalous-login monitoring, and breach checks.",
+    note:
+      "This often follows phishing, credential stuffing, or credentials exposed in prior breaches.",
+  },
+  {
+    number: "6",
+    title: "Execution - Scripting Interpreter",
+    tag: "TA0002 - T1059",
+    body:
+      "Execution runs adversary-controlled code on a system. Command and Scripting Interpreter abuses tools like PowerShell, Bash, or cmd to execute commands and live off the land.",
+    calloutLabel: "Defenses",
+    calloutText:
+      "Application control, script block logging, constrained language mode, least privilege, and EDR behavioral detection.",
+    note:
+      "Scripts can download payloads, move laterally, or exfiltrate data quickly.",
+  },
+  {
+    number: "7",
+    title: "Persistence",
+    tag: "TA0003",
+    body:
+      "Persistence ensures adversaries maintain access after reboots or credential changes through registry run keys, scheduled tasks, services, startup folders, or cloud IAM backdoors.",
+    calloutLabel: "Defenses",
+    calloutText:
+      "Baseline autoruns, monitor new services and tasks, integrity monitoring, rotate credentials, and remove unused accounts.",
+    note:
+      "Without finding persistence, incident response may only provide temporary relief.",
+  },
+  {
+    number: "8",
+    title: "Discovery",
+    tag: "TA0007",
+    body:
+      "Discovery is reconnaissance inside the environment: enumerating users, groups, network shares, domain trust, cloud resources, and security tools to plan the next move.",
+    calloutLabel: "Defenses",
+    calloutText:
+      "Honeypots, UEBA, restricted directory enumeration, tiered admin models, suspicious LDAP/AD query logging, and least-privilege access.",
+    note:
+      "Discovery often happens before lateral movement and privilege escalation.",
   },
 ];
 
