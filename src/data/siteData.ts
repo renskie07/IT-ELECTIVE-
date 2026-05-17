@@ -44,8 +44,8 @@ export const navLinks = [
   { name: "About", href: "/#about" },
   { name: "Projects", href: "/projects" },
   { name: "Resume", href: "/resume" },
-  { name: "IT Elective 6", href: "/education" },
   { name: "Credentials", href: "/credentials" },
+  { name: "IT Elective 6", href: "/education" },
 ];
 
 export const freelancePlatforms = [
@@ -99,8 +99,6 @@ export const sectionContent = {
     title: "IT Elective 6 - Course Topics",
     description:
       "Security models, adversarial thinking, and MITRE ATT&CK tactics from threat frameworks through initial access, execution, persistence, and discovery.",
-    sourceLabel: "Course Reference",
-    sourceUrl: "https://leozata-jpg.github.io/it-elective-6-portfolio/topics.html",
   },
   techStackSection: {
     title: "Technologies & Tools",
