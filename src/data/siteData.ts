@@ -109,7 +109,7 @@ export const sectionContent = {
   resume: {
     title: "Resume",
     description:
-      "A downloadable resume will be added here. For now, this page keeps a recruiter-ready resume placeholder without linking to a missing file.",
+      "A downloadable resume will be added here. For now, this page shows a coming soon state without linking to a missing file.",
     readyLabel: "Download Resume",
     pendingLabel: "Resume Coming Soon",
   },
