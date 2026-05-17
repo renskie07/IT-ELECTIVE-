@@ -2,54 +2,154 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
-import { sectionContent, siteConfig } from "../data/siteData";
-
-const hasResume = siteConfig.resumeUrl.length > 0;
+import { siteConfig } from "../data/siteData";
 ---
 
-<Layout title="Resume | Tom Joshua">
+<Layout title="Resume | Renier C. Nigparanon">
   <Navbar />
 
-  <div class="pt-28 md:pt-32 pb-10 px-4 sm:px-6">
+  <section class="pt-28 md:pt-32 pb-10 px-4 sm:px-6">
     <div class="scroll-fade max-w-6xl mx-auto text-center">
-      <p class="text-sm font-bold text-neutral-500 uppercase tracking-widest mb-4">
-        Resume File
+      <p class="text-sm font-bold text-emerald-400 uppercase tracking-[0.3em] mb-4">
+        Resume & Student Profile
       </p>
       <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
-        {sectionContent.resume.title}
+        Renier C. Nigparanon
       </h1>
+      <p class="text-neutral-400 max-w-3xl mx-auto text-lg leading-relaxed">
+        A 4BSIT-2 student at New Era University with customer service, event support, and delivery experience. This resume page highlights academic progress, practical roles, and student-ready strengths.
+      </p>
     </div>
-  </div>
+  </section>
 
-  <section class="pb-24 md:pb-32">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6">
-      <div class="scroll-fade rounded-2xl border border-white/10 bg-neutral-900/70 p-7 md:p-8 text-center">
-        <h2 class="text-2xl font-bold text-white mb-4">
-          Resume Coming Soon
-        </h2>
-        <p class="text-neutral-400 leading-relaxed mb-6">
-          The downloadable resume is not available yet. This button will be enabled once the final file is ready.
-        </p>
+  <section class="pb-24 md:pb-32 px-4 sm:px-6 bg-slate-50">
+    <div class="max-w-6xl mx-auto grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+      <div class="scroll-fade rounded-3xl border border-slate-200 bg-white p-8 shadow-2xl">
+        <div class="mb-8">
+          <div class="rounded-3xl overflow-hidden border border-slate-200 bg-slate-100">
+            <img
+              src="/profile/picture.png"
+              alt="Profile picture of Renier C. Nigparanon"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
 
-        {
-          hasResume ? (
+        <div class="grid gap-6">
+          <div class="rounded-3xl border border-slate-200 bg-slate-100 p-6">
+            <h3 class="text-2xl font-semibold text-slate-900 mb-4">Profile PDF</h3>
+            <p class="text-slate-700 leading-relaxed mb-6">
+              View the student profile and resume PDF for a polished representation of the capstone, contact details, and academic credentials.
+            </p>
             <a
               href={siteConfig.resumeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center justify-center bg-white text-neutral-950 font-bold px-8 py-4 rounded-full hover:bg-neutral-200 transition-colors"
+              class="inline-flex items-center justify-center rounded-full bg-slate-900 text-white px-6 py-3 hover:bg-slate-800 transition-colors"
             >
-              {sectionContent.resume.readyLabel}
+              Open Profile PDF
             </a>
-          ) : (
-            <span
-              aria-disabled="true"
-              class="inline-flex items-center justify-center bg-white/10 text-neutral-400 font-bold px-8 py-4 rounded-full border border-white/10 cursor-not-allowed"
-            >
-              {sectionContent.resume.pendingLabel}
-            </span>
-          )
-        }
+          </div>
+
+          <div class="rounded-3xl border border-slate-200 bg-slate-100 p-6">
+            <h3 class="text-2xl font-semibold text-slate-900 mb-4">Contact</h3>
+            <div class="space-y-3 text-slate-700 text-sm leading-7">
+              <p>
+                <span class="font-semibold text-slate-900">Email:</span>
+                <a href={`mailto:${siteConfig.email}`} class="text-slate-900 underline">{siteConfig.email}</a>
+              </p>
+              <p>
+                <span class="font-semibold text-slate-900">Facebook:</span>
+                <a
+                  href={siteConfig.social.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-slate-900 underline"
+                >
+                  facebook.com/kyudipie
+                </a>
+              </p>
+              <p>
+                <span class="font-semibold text-slate-900">Phone:</span> 09389745684
+              </p>
+              <p>
+                <span class="font-semibold text-slate-900">Section:</span> 4BSIT-2
+              </p>
+            </div>
+          </div>
+
+          <div class="rounded-3xl border border-slate-200 bg-slate-100 p-6">
+            <h3 class="text-2xl font-semibold text-slate-900 mb-4">Skills</h3>
+            <ul class="grid gap-3 text-slate-700 text-sm leading-7 sm:grid-cols-2">
+              <li>Microsoft Office</li>
+              <li>PowerPoint</li>
+              <li>Excel</li>
+              <li>Communication</li>
+              <li>Flexibility</li>
+              <li>Teamwork</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-fade rounded-3xl border border-slate-200 bg-white p-8 shadow-2xl">
+        <div class="mb-8">
+          <h3 class="text-3xl font-bold text-slate-900 mb-4">Objective</h3>
+          <p class="text-slate-700 leading-relaxed">
+            I am seeking an environment that helps me grow my skills, lets me use my talents, and supports my career success.
+          </p>
+        </div>
+
+        <div class="space-y-8">
+          <div>
+            <h3 class="text-2xl font-semibold text-slate-900 mb-4">Work Experience</h3>
+            <div class="space-y-6 text-slate-700 text-sm leading-7">
+              <div>
+                <p class="font-semibold text-slate-900">Event Supervisor</p>
+                <p class="text-slate-500">A AND R Event Catering Services — Taguig City</p>
+                <p>March 2022 - 2023</p>
+                <p class="mt-2">
+                  Oversaw event staff and catering operations, coordinated schedules, and supported on-site logistics for private and corporate events.
+                </p>
+              </div>
+              <div>
+                <p class="font-semibold text-slate-900">Jollibee Crew</p>
+                <p class="text-slate-500">Marikina City</p>
+                <p>May 2021</p>
+                <p class="mt-2">
+                  Supported customer service, food preparation, and team coordination while maintaining quality and speed in a busy environment.
+                </p>
+              </div>
+              <div>
+                <p class="font-semibold text-slate-900">Delivery Assistant / Delivery Boy</p>
+                <p class="text-slate-500">Marikina City</p>
+                <p>March 2020 - March 2021</p>
+                <p class="mt-2">
+                  Handled deliveries with time management, route planning, and customer communication to help ensure on-time service.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-semibold text-slate-900 mb-4">Education</h3>
+            <div class="space-y-6 text-slate-700 text-sm leading-7">
+              <div>
+                <p class="font-semibold text-slate-900">Bachelor of Science Information Technology</p>
+                <p class="text-slate-500">New Era University — Quezon City</p>
+                <p>2025 - Present</p>
+              </div>
+              <div>
+                <p class="font-semibold text-slate-900">Senior High School</p>
+                <p class="text-slate-500">Malanday National High School — Marikina City</p>
+                <p>2017 - 2019</p>
+              </div>
+              <div>
+                <p class="font-semibold text-slate-900">Elementary</p>
+                <p class="text-slate-500">Malanday Elementary School — Marikina City</p>
+                <p>2014 - 2017</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

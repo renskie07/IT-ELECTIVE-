@@ -27,16 +27,17 @@ export interface EducationTopic {
 }
 
 export const siteConfig = {
-  name: "Tom Tumanan | PORTFOLIO",
-  title: "Freelance & IT Support",
+  name: "Renier C. Nigparanon",
+  title: "4BSIT-2 | BS Information Technology",
   description:
-    "Portfolio of a web developer and IT support freelancer focused on responsive websites, workflow automation, troubleshooting, and practical technical operations.",
-  email: "tomjatn@gmail.com",
-  resumeUrl: "",
-  siteUrl: "https://tomjoshuas-projects.vercel.app/",
+    "A student portfolio highlighting academic resume, capstone storytelling, and practical experience for 4BSIT-2.",
+  email: "reniernigs07@gmail.com",
+  resumeUrl: "/profile-picure.pdf",
+  siteUrl: "",
   social: {
-    github: "https://github.com/ttomja/edu-portfolio.git",
-    linkedin: "https://www.linkedin.com/in/tom-joshua-tumanan-221364315/",
+    github: "",
+    linkedin: "",
+    facebook: "https://www.facebook.com/kyudipie",
   },
 };
 
@@ -44,8 +45,7 @@ export const navLinks = [
   { name: "About", href: "/#about" },
   { name: "Projects", href: "/projects" },
   { name: "Resume", href: "/resume" },
-  { name: "Credentials", href: "/credentials" },
-  { name: "IT Elective 6", href: "/education" },
+  { name: "4BSIT-2", href: "/education" },
 ];
 
 export const freelancePlatforms = [
@@ -56,179 +56,201 @@ export const freelancePlatforms = [
 
 export const sectionContent = {
   hero: {
-    badge: "Available for web, IT support, and automation work",
-    titleLine1: "Web Developer",
-    titleLine2: "& IT Support Freelancer",
+    badge: "4BSIT-2 | New Era University",
+    titleLine1: "Hi, I’m Renier,",
+    titleLine2: "Information Technology Student",
     description:
-      "I build responsive websites, organize technical workflows, and troubleshoot systems for teams that need practical, reliable support.",
-    primaryCta: "View Projects",
-    contactCta: "Contact Me",
+      "A BSIT student presenting the StreetFix capstone and a clean portfolio focused on academic growth, project delivery, and practical IT experience.",
+    primaryCta: "See My Capstone",
+    contactCta: "Email Renier",
     proofPoints: [
-      "Astro, TypeScript, Tailwind CSS",
-      "PHP and MySQL project work",
-      "IT support and workflow automation",
+      "Resume-ready academic profile",
+      "StreetFix capstone storytelling",
+      "Customer service and operations experience",
     ],
   },
   about: {
-    title: "Practical technical support with visible project work.",
+    title: "4BSIT-2 portfolio with real service experience.",
     description:
-      "My portfolio focuses on hands-on work: building web interfaces, connecting tools, documenting technical decisions, and supporting users when systems need to run smoothly.",
+      "I blend BSIT studies with delivery and event work to build a professional portfolio that highlights my resume, capstone, and practical skills.",
     highlights: [
-      "I can build and maintain responsive sites using modern frontend tooling.",
-      "I can support IT operations such as setup, troubleshooting, documentation, and user support.",
-      "I can automate repetitive workflows across spreadsheets, CRMs, forms, and admin tools.",
+      "Third-year BSIT student at New Era University.",
+      "Experience supporting delivery and event operations across Metro Manila.",
+      "Creating a portfolio that reflects both career growth and academic focus.",
     ],
   },
   services: {
-    title: "Core Strengths",
+    title: "Portfolio Focus",
     subtitle:
-      "Focused capabilities that match web development, IT support, and technical operations roles.",
+      "Key strengths and student-ready abilities showcased for 4BSIT-2 and future IT pathways.",
   },
   experience: {
     title: "Experience",
     subtitle:
-      "Work and training that show technical support, implementation, and communication practice.",
+      "Roles and responsibilities that show service, coordination, and professional habits.",
   },
   education: {
-    title: "Certifications & Education",
+    title: "Credentials & Education",
     subtitle:
-      "Verified credentials that support my IT troubleshooting and systems foundation.",
+      "Academic background, training, and certifications that support my BSIT journey.",
   },
   educationPage: {
-    kicker: "IT Elective 6",
-    title: "IT Elective 6 - Course Topics",
+    kicker: "4BSIT-2",
+    title: "4BSIT-2 Academic Focus",
     description:
-      "Security models, adversarial thinking, and MITRE ATT&CK tactics from threat frameworks through initial access, execution, persistence, and discovery.",
+      "Selected topics and coursework from the BSIT program, presented as part of a student portfolio and capstone narrative.",
   },
   techStackSection: {
-    title: "Technologies & Tools",
+    title: "Tools & Skills",
     subtitle:
-      "Tools I use or practice with for websites, support work, automation, and technical operations.",
-    badge: "Technical Toolkit",
+      "Software, office skills, and student tools used for projects, academic work, and event coordination.",
+    badge: "Student Toolkit",
   },
   resume: {
     title: "Resume",
     description:
-      "A downloadable resume will be added here. For now, this page shows a coming soon state without linking to a missing file.",
+      "A full student resume with education, work experience, skills, and a capstone showcase.",
     readyLabel: "Download Resume",
-    pendingLabel: "Resume Coming Soon",
+    pendingLabel: "Resume Page Available",
   },
   footer: {
-    ctaLine1: "Need a web developer",
-    ctaLine2: "or technical support freelancer?",
-    ctaButton: "Email Me",
-    connectLabel: "Professional links",
+    ctaLine1: "Ready to review 4BSIT-2 work?",
+    ctaLine2: "Let's connect and share the capstone story.",
+    ctaButton: "Email Renier",
+    connectLabel: "Connect with Renier",
     copyright: "All Rights Reserved.",
   },
   projectsPage: {
-    title: "Project Proof",
+    title: "Capstone & Project Work",
     description:
-      "A closer look at selected work, including the problem, solution, stack, contribution, and current proof links.",
+      "Based on PROPOSAL STREETFIX(1).pdf, this section explains the StreetFix capstone, the core problem, technical solution, and the visuals supporting the project narrative.",
   },
 };
 
 export const stats = [
-  { value: "2", label: "Featured projects documented", highlight: false },
-  { value: "18+", label: "Tools practiced", highlight: false },
-  { value: "2", label: "Verified credentials", highlight: false },
-  { value: "Open", label: "Freelance and junior roles", highlight: true },
+  { value: "1", label: "Featured capstone", highlight: true },
+  { value: "5+", label: "Service experience roles", highlight: false },
+  { value: "3", label: "Academic years in BSIT", highlight: false },
+  { value: "4", label: "Resume-ready strengths", highlight: false },
 ];
 
 export const techStack = {
   automation: {
-    title: "Automation & CRM",
-    description: "Workflow support and operations",
+    title: "Office & Academic Tools",
+    description: "Spreadsheet, presentation, and document skills for school and coordination.",
     color: "emerald",
-    tools: ["Zapier", "Make.com", "n8n", "ActiveCampaign", "HubSpot", "Google Apps Script"],
+    tools: ["Microsoft Excel", "PowerPoint", "Google Sheets", "Google Docs", "Notion", "Canva"],
   },
   development: {
-    title: "Web Development",
-    description: "Frontend and full-stack basics",
+    title: "Web & Study Tools",
+    description: "Portfolio presentation, research, and academic documentation tools.",
     color: "blue",
-    tools: ["Astro", "React", "TypeScript", "Tailwind CSS", "Node.js", "PHP"],
+    tools: ["Astro", "HTML", "CSS", "JavaScript", "Tailwind CSS", "VS Code"],
   },
   admin: {
-    title: "IT & Admin Tools",
-    description: "Support and team operations",
+    title: "Communication & Coordination",
+    description: "Teamwork, event support, and customer-facing skills.",
     color: "purple",
-    tools: ["Notion", "Airtable", "Excel/Sheets", "Asana", "Jira", "Slack"],
+    tools: ["Email", "Slack", "Task Planning", "Field Coordination", "Customer Service", "Time Management"],
   },
 };
 
 export const services = [
   {
-    title: "Responsive Web Builds",
+    title: "Academic Capstone Presentation",
     icon: "code",
     description:
-      "Build clean portfolio, business, and project pages with Astro, TypeScript, Tailwind CSS, and practical frontend structure.",
+      "Present a capstone portfolio that explains problem-solving, student research, and technical learning in a clear format.",
   },
   {
-    title: "IT Support",
+    title: "Professional Resume",
     icon: "server",
     description:
-      "Troubleshoot hardware, software, account, and setup issues with clear documentation and steady communication.",
+      "Showcase education, work experience, and skills in a student-friendly layout that hiring panels can review quickly.",
   },
   {
-    title: "Workflow Automation",
+    title: "Student Project Storytelling",
     icon: "workflow",
     description:
-      "Connect tools, forms, spreadsheets, and CRM workflows to reduce repetitive admin work and manual handoffs.",
+      "Communicate what was learned, how tasks were completed, and why academic work matters in real settings.",
   },
   {
-    title: "Technical Operations",
+    title: "Event & Delivery Support",
     icon: "briefcase",
     description:
-      "Support day-to-day technical tasks such as documentation, data cleanup, system checks, and tool organization.",
+      "Highlight service roles, coordination experience, and practical habits from delivery and event work.",
   },
 ];
 
 export const projects: Project[] = [
   {
-    title: "Samgyupsal POS & Inventory Monitoring System",
-    role: "Full-Stack Developer",
+    title: "StreetFix Capstone Project",
+    role: "Capstone Lead",
     status: "Completed",
     description:
-      "A web-based POS and inventory monitoring system for a Korean food business, built around branch operations, sales tracking, and FEFO inventory control.",
+      "A community street repair platform designed to document road conditions, manage repair proposals, and present the StreetFix capstone using the proposal and visual references from PROPOSAL STREETFIX(1).pdf.",
     problem:
-      "Food inventory cannot be managed safely with a single stock number because products may have different expiration dates, branch locations, and sales velocity.",
+      "Street infrastructure issues are hard to track because repair requests, road condition imaging, and maintenance plans are scattered across documents and manual reports.",
     solution:
-      "The system separates product records from expiration-aware inventory batches, applies FEFO stock deduction during checkout, and surfaces low-stock, near-expiry, and predicted stockout alerts.",
+      "StreetFix centralizes problem reports, repair proposals, and progress visuals so stakeholders can see road conditions, prioritize fixes, and manage project documentation effectively.",
     contributions: [
-      "Built the React frontend for dashboard, POS, inventory, reports, products, and user workflows.",
-      "Implemented Supabase Auth, PostgreSQL tables, RLS policies, and RPC-backed checkout and stock-in flows.",
-      "Added FEFO batch deduction, sale-to-batch allocation records, inventory movements, and sales-velocity alert logic.",
+      "Translated the StreetFix proposal into a structured capstone showcase for academic review.",
+      "Developed the project narrative, defined user scenarios, and organized visuals from capstone.pdf into an online portfolio presentation.",
+      "Prepared the technical summary, proposal rationale, and outcome highlights for classroom and stakeholder review.",
     ],
     outcome:
-      "The deployed capstone demonstrates a production-style Supabase backend, role-aware access, multi-branch inventory monitoring, FEFO checkout behavior, and Vercel deployment.",
-    techStack: ["React", "Supabase", "PostgreSQL", "RLS", "Vercel", "FEFO Logic"],
-    repoUrl: "https://github.com/ttomja/samgyupsal-pos-system.git",
-    demoUrl: "https://samgyupsal.vercel.app/",
-    imagePath: "/samgyupsal-pos.png",
-    imageAlt: "Login screen of the Samgyupsal Korean Food POS and inventory monitoring system",
+      "A clear capstone presentation that connects street repair challenges to a documented solution, complete with proposal details and illustrative images from the capstone package.",
+    techStack: ["HTML", "CSS", "Responsive Design", "Documentation", "Capstone Presentation"],
+    repoUrl: "",
+    demoUrl: "",
+    imagePath: "/streetfix/streetfix-login.png",
+    imageAlt: "StreetFix login screen showing the community reporting interface",
   },
   {
-    title: "Sky Pulse Weather App",
-    role: "Mobile Developer",
+    title: "StreetFix Admin Dashboard",
+    role: "Product Designer",
     status: "Completed",
     description:
-      "A mobile weather app concept that displays local forecast information through a weather API integration.",
+      "An admin dashboard view for StreetFix that shows total reports, active issues, and fixed cases while providing a quick action panel for operators.",
     problem:
-      "Users need a simple way to check local weather conditions without navigating through a complex dashboard.",
+      "Municipal staff need a centralized view of reported issues, priorities, and progress to manage street repairs efficiently.",
     solution:
-      "The app presents weather information in a focused mobile interface with API-powered forecast data and lightweight visual hierarchy.",
+      "The dashboard organizes key metrics, report summaries, and shortcuts for tracking progress and handling community issues.",
     contributions: [
-      "Designed the mobile UI flow for quick forecast scanning.",
-      "Integrated weather data into the app experience.",
-      "Packaged the project demo for review through a shared build link.",
+      "Designed the admin dashboard layout for concise issue tracking.",
+      "Defined priority indicators, quick action cards, and report navigation for field operations.",
+      "Aligned the dashboard visuals with StreetFix branding and user flow expectations.",
     ],
     outcome:
-      "The project shows mobile UI thinking, API integration practice, and a user-centered approach to a small utility app.",
-    techStack: ["Mobile Development", "Weather API", "UI Design"],
+      "A clear summary interface that supports StreetFix administrators in reviewing issue status and prioritizing road repairs.",
+    techStack: ["UI Design", "Dashboard Layout", "User Workflow"],
     repoUrl: "",
-    demoUrl:
-      "https://drive.google.com/file/d/1YnaVtw5lgnPo2T6tb5N425dDz4NUeMGP/view?usp=sharing",
-    imagePath: "/sky-pulse.webp",
-    imageAlt: "Mobile screens from the Sky Pulse Weather App",
+    demoUrl: "",
+    imagePath: "/streetfix/streetfix-dashboard.png",
+    imageAlt: "StreetFix admin dashboard screen showing report summaries and quick actions",
+  },
+  {
+    title: "StreetFix Reporting Flow",
+    role: "UX Designer",
+    status: "In Progress",
+    description:
+      "A user flow for submitting a street issue report, selecting location, and uploading photos to document damaged roads and sidewalks.",
+    problem:
+      "Citizens need an easy way to report infrastructure issues with photos and location details without filling out complex forms.",
+    solution:
+      "The StreetFix reporting flow simplifies issue submission using photo reports, GPS pinning, and issue categories.",
+    contributions: [
+      "Designed the issue report screen with category selection and camera/gallery upload options.",
+      "Improved the submission workflow for faster community reporting.",
+      "Enabled clear guidance for location selection and issue description entry.",
+    ],
+    outcome:
+      "A streamlined reporting workflow that empowers users to log road and sidewalk issues with supporting images.",
+    techStack: ["UX", "Mobile UI", "Reporting Workflow"],
+    repoUrl: "",
+    demoUrl: "",
+    imagePath: "/streetfix/streetfix-report.png",
+    imageAlt: "StreetFix report submission screen with issue categories and location picker",
   },
 ];
 
@@ -350,19 +372,19 @@ export const educationTopics: EducationTopic[] = [
 
 export const workExperience = [
   {
-    role: "Freelance Web & IT Support",
-    company: "Independent Projects",
-    period: "2026 - Present",
+    role: "Event Supervisor",
+    company: "A AND R Event Catering Services",
+    period: "March 2022 - 2023",
     description:
-      "Building small web projects, supporting technical workflows, organizing tool setups, and documenting practical fixes for clients and personal project work.",
-    skills: ["Web Development", "Technical Support", "Workflow Automation"],
+      "Managed event crew operations, coordinated schedules, and ensured seamless service delivery for catered events in Taguig City.",
+    skills: ["Event Coordination", "Team Leadership", "Client Support"],
   },
   {
-    role: "IT Support Intern",
-    company: "Local Tech Firm",
-    period: "2025 - 2026",
+    role: "Delivery Assistant",
+    company: "Local Delivery Services",
+    period: "March 2020 - May 2021",
     description:
-      "Assisted with hardware troubleshooting, software installation, network configuration, and user support for office systems.",
-    skills: ["Hardware Support", "Windows Admin", "Network Basics"],
+      "Handled on-time deliveries, supported logistics flow, and maintained positive communication with clients and team members.",
+    skills: ["Logistics", "Time Management", "Customer Service"],
   },
 ];

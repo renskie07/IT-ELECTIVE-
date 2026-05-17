@@ -1,4 +1,4 @@
-# Tom Joshua Portfolio
+# Renier Nigparanon
 
 Professional portfolio for a Web Developer and IT Support Freelancer. The site is built with Astro and Tailwind CSS and highlights project proof, technical skills, credentials, experience, and contact paths.
 
@@ -33,7 +33,6 @@ Most portfolio content is managed in `src/data/siteData.ts`.
 - `/projects` - detailed project proof
 - `/resume` - dedicated resume placeholder and resume guidance
 - `/education` - IT Elective 6 course topics
-- `/credentials` - certifications and education
 
 ## Verification
 
