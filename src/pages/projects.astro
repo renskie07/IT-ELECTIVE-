@@ -1,11 +1,4 @@
 ---
-// =============================================================================
-// PROJECTS PAGE
-// =============================================================================
-// Displays all portfolio projects in a detailed spotlight format.
-// Data is loaded from: src/data/siteData.ts -> projects, sectionContent
-// =============================================================================
-
 import Layout from "../layouts/Layout.astro";
 import ProjectSpotlight from "../components/ProjectSpotlight.astro";
 import Navbar from "../components/Navbar.astro";
@@ -16,33 +9,37 @@ import { projects, sectionContent } from "../data/siteData";
 <Layout title="Projects | Tom Joshua">
   <Navbar />
 
-  <!-- Page Header -->
-  <div class="pt-32 pb-12 px-6">
+  <div class="pt-28 md:pt-32 pb-10 px-4 sm:px-6">
     <div class="scroll-fade max-w-6xl mx-auto text-center">
-      <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+      <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
         {sectionContent.projectsPage.title}
       </h1>
-      <p class="text-neutral-400 max-w-2xl mx-auto text-lg">
+      <p class="text-neutral-400 max-w-2xl mx-auto text-lg leading-relaxed">
         {sectionContent.projectsPage.description}
       </p>
     </div>
   </div>
 
-  <!-- Projects List -->
-  <section class="pb-32 relative">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="scroll-fade space-y-12">
+  <section class="pb-24 md:pb-32 relative">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="scroll-fade divide-y divide-white/5">
         {
           projects.map((project, index) => (
             <ProjectSpotlight
               index={index}
               title={project.title}
               role={project.role}
-              status={project.status as any}
+              status={project.status}
               description={project.description}
+              problem={project.problem}
+              solution={project.solution}
+              contributions={project.contributions}
+              outcome={project.outcome}
               techStack={project.techStack}
-              link={project.link}
+              repoUrl={project.repoUrl}
+              demoUrl={project.demoUrl}
               imagePath={project.imagePath}
+              imageAlt={project.imageAlt}
             />
           ))
         }
@@ -50,7 +47,6 @@ import { projects, sectionContent } from "../data/siteData";
     </div>
   </section>
 
-  <!-- Floating Back Button -->
   <a
     href="/"
     class="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50 flex items-center gap-2 px-4 py-2.5 md:px-5 md:py-3 bg-neutral-900/80 backdrop-blur-md border border-white/10 rounded-full text-white shadow-2xl hover:bg-neutral-800 hover:scale-105 transition-all duration-300 group"
@@ -67,7 +63,7 @@ import { projects, sectionContent } from "../data/siteData";
         stroke-width="2"
         d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
     </svg>
-    <span class="font-medium">Back to Home</span>
+    <span class="font-medium">Home</span>
   </a>
 
   <Footer />

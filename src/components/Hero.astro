@@ -1,109 +1,89 @@
 ---
-// =============================================================================
-// HERO COMPONENT
-// =============================================================================
-// The main banner section at the top of the homepage.
-// Displays: Badge, heading, description, CTA buttons, and profile image.
-// Content is loaded from: src/data/siteData.ts -> sectionContent.hero
-// =============================================================================
-
-import BookingButton from "./BookingButton.astro";
 import { siteConfig, sectionContent } from "../data/siteData";
 
 const hero = sectionContent.hero;
+const hasResume = siteConfig.resumeUrl.length > 0;
 ---
 
-<header class="max-w-6xl mx-auto px-6 py-24 md:py-32 relative overflow-hidden">
-  <!-- Background Grid Pattern (Parallax) -->
-  <div
-    class="parallax-slow absolute inset-0 pointer-events-none opacity-20 bg-[size:30px_30px] bg-[linear-gradient(to_right,#333_1px,transparent_1px),linear-gradient(to_bottom,#333_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"
-  >
-  </div>
+<header class="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-32 relative overflow-hidden">
+  <div class="parallax-slow absolute inset-0 pointer-events-none opacity-20 bg-[size:30px_30px] bg-[linear-gradient(to_right,#333_1px,transparent_1px),linear-gradient(to_bottom,#333_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
 
-  <div class="grid md:grid-cols-2 gap-16 items-center relative z-10">
-    <!-- Left Column: Text Content -->
+  <div class="grid md:grid-cols-[1.1fr_0.9fr] gap-12 md:gap-16 items-center relative z-10">
     <div class="scroll-slide-left">
-      <!-- Status Badge -->
-      <div
-        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-mono tracking-wide uppercase mb-8"
-      >
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 text-xs font-mono tracking-wide uppercase mb-7">
         <span class="relative flex h-2 w-2">
-          <span
-            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"
-          ></span>
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"
-          ></span>
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
         </span>
         {hero.badge}
       </div>
 
-      <!-- Main Heading -->
-      <h1
-        class="text-5xl md:text-7xl font-bold tracking-tight text-white mb-8 leading-tight"
-      >
+      <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white mb-7 leading-tight">
         {hero.titleLine1}
         <br />
-        <span
-          class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400"
-        >
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400">
           {hero.titleLine2}
         </span>
       </h1>
 
-      <!-- Description -->
-      <p
-        class="text-lg md:text-xl text-neutral-400 mb-10 leading-relaxed max-w-lg"
-      >
-        I architect seamless digital ecosystems. From <span
-          class="text-neutral-200 font-medium">high-performance web apps</span
-        > to <span class="text-neutral-200 font-medium"
-          >automated business logistics</span
-        >, I build the technical backbone that allows your business to scale
-        without friction.
+      <p class="text-lg md:text-xl text-neutral-400 mb-8 leading-relaxed max-w-2xl">
+        {hero.description}
       </p>
 
-      <!-- CTA Buttons -->
-      <div class="flex flex-wrap gap-4">
-        <BookingButton url={siteConfig.calendlyUrl} label={hero.primaryCta} />
+      <div class="flex flex-wrap gap-3 mb-8">
+        {
+          hero.proofPoints.map((point) => (
+            <span class="text-xs sm:text-sm text-neutral-300 bg-white/[0.04] border border-white/10 rounded-full px-3 py-1.5">
+              {point}
+            </span>
+          ))
+        }
+      </div>
+
+      <div class="flex flex-wrap gap-3">
+        <a
+          href="/projects"
+          class="inline-flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3.5 px-6 rounded-full transition-all hover:shadow-lg hover:shadow-indigo-500/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-300"
+        >
+          {hero.primaryCta}
+        </a>
+
+        {
+          hasResume ? (
+            <a
+              href={siteConfig.resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-neutral-700 hover:border-neutral-500 hover:bg-neutral-800 transition-all text-neutral-300 hover:text-white font-medium"
+            >
+              Download Resume
+            </a>
+          ) : (
+            <a
+              href="#resume"
+              class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-neutral-700 hover:border-neutral-500 hover:bg-neutral-800 transition-all text-neutral-300 hover:text-white font-medium"
+            >
+              {hero.resumeCta}
+            </a>
+          )
+        }
 
         <a
           href={`mailto:${siteConfig.email}`}
-          class="group flex items-center gap-3 px-6 py-3.5 rounded-full border border-neutral-700 hover:border-neutral-500 hover:bg-neutral-800 transition-all text-neutral-300 hover:text-white font-medium"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-neutral-700 hover:border-neutral-500 hover:bg-neutral-800 transition-all text-neutral-300 hover:text-white font-medium"
         >
-          <span>{hero.secondaryCta}</span>
-          <svg
-            class="w-4 h-4 text-neutral-500 group-hover:text-white transition-colors group-hover:translate-x-1 duration-300"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-          </svg>
+          {hero.contactCta}
         </a>
       </div>
     </div>
 
-    <!-- Right Column: Profile Image -->
-    <div
-      class="scroll-slide-right relative group order-first md:order-last flex justify-center md:justify-end"
-    >
-      <!-- Glow Effect -->
-      <div
-        class="absolute inset-0 bg-gradient-to-r from-blue-600 to-teal-600 rounded-full blur-2xl opacity-20 group-hover:opacity-50 transition duration-1000 group-hover:duration-200 w-3/4 mx-auto md:mr-0"
-      >
-      </div>
-      <!-- Image Container -->
-      <div
-        class="relative rounded-2xl bg-neutral-900 border border-neutral-800 overflow-hidden w-64 h-64 md:w-80 md:h-80 shadow-2xl rotate-3 group-hover:rotate-0 transition-all duration-500"
-      >
+    <div class="scroll-slide-right relative group order-first md:order-last flex justify-center md:justify-end">
+      <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-teal-600 rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition duration-700 w-3/4 mx-auto md:mr-0"></div>
+      <div class="relative rounded-2xl bg-neutral-900 border border-neutral-800 overflow-hidden w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 shadow-2xl rotate-2 group-hover:rotate-0 transition-all duration-500">
         <img
-          src="/me.png"
-          alt={siteConfig.name}
-          class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100"
+          src="/me.webp"
+          alt={`${siteConfig.name}, ${siteConfig.title}`}
+          class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100"
         />
       </div>
     </div>

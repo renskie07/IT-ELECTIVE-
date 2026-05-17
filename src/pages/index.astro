@@ -1,43 +1,68 @@
 ---
-// =============================================================================
-// INDEX PAGE (Homepage)
-// =============================================================================
-// The main landing page of the portfolio.
-// Sections: Hero, Tech Stack, Services, Experience, Booking, Footer
-// Data is loaded from: src/data/siteData.ts
-// =============================================================================
-
 import Layout from "../layouts/Layout.astro";
 import ServiceCard from "../components/ServiceCard.astro";
 import ExperienceItem from "../components/ExperienceItem.astro";
 import Hero from "../components/Hero.astro";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
-
 import TechStack from "../components/TechStack.astro";
+import {
+  workExperience,
+  services,
+  sectionContent,
+  siteConfig,
+} from "../data/siteData";
 
-import { workExperience, services, sectionContent } from "../data/siteData";
+const hasResume = siteConfig.resumeUrl.length > 0;
 ---
 
-<Layout title="Tom Joshua | IT Specialist & Technical VA">
+<Layout title="Tom Joshua | Web Developer & IT Support Freelancer">
   <Navbar />
   <Hero />
+
+  <section id="about" class="py-24 border-y border-white/5 bg-neutral-900/30">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-16 items-start">
+      <div class="scroll-fade">
+        <p class="text-sm font-bold text-neutral-500 uppercase tracking-widest mb-4">
+          Profile
+        </p>
+        <h2 class="text-3xl md:text-5xl font-bold text-white leading-tight mb-6">
+          {sectionContent.about.title}
+        </h2>
+        <p class="text-neutral-400 text-lg leading-relaxed">
+          {sectionContent.about.description}
+        </p>
+      </div>
+
+      <div class="scroll-fade grid gap-4">
+        {
+          sectionContent.about.highlights.map((highlight, index) => (
+            <div class="bg-neutral-950/70 border border-white/10 rounded-2xl p-6">
+              <div class="text-sm font-mono text-indigo-400 mb-3">
+                {(index + 1).toString().padStart(2, "0")}
+              </div>
+              <p class="text-neutral-300 leading-relaxed">{highlight}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
   <TechStack />
 
-  <!-- ===== SERVICES SECTION ===== -->
-  <section
-    id="services"
-    class="py-24 relative bg-neutral-900/30 backdrop-blur-sm border-y border-white/5"
-  >
-    <div class="max-w-6xl mx-auto px-6">
-      <!-- Section Title -->
-      <h2
-        class="scroll-fade text-sm font-bold text-neutral-500 uppercase tracking-widest mb-12 text-center"
-      >
-        {sectionContent.services.title}
-      </h2>
-      <!-- Services Grid -->
-      <div class="scroll-fade grid grid-cols-1 md:grid-cols-3 gap-6">
+  <section id="services" class="py-24 relative bg-neutral-900/30 border-y border-white/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="scroll-fade text-center max-w-3xl mx-auto mb-12">
+        <p class="text-sm font-bold text-neutral-500 uppercase tracking-widest mb-4">
+          {sectionContent.services.title}
+        </p>
+        <p class="text-neutral-400 text-lg leading-relaxed">
+          {sectionContent.services.subtitle}
+        </p>
+      </div>
+
+      <div class="scroll-fade grid grid-cols-1 md:grid-cols-2 gap-6">
         {
           services.map((service) => (
             <ServiceCard
@@ -51,13 +76,10 @@ import { workExperience, services, sectionContent } from "../data/siteData";
     </div>
   </section>
 
-  <!-- ===== WORK EXPERIENCE SECTION ===== -->
-  <section id="experience" class="py-32 relative">
-    <!-- Background Overlay -->
+  <section id="experience" class="py-28 relative">
     <div class="absolute inset-0 bg-white/[0.02] -z-10"></div>
-    <div class="max-w-6xl mx-auto px-6">
-      <!-- Section Header -->
-      <div class="scroll-fade mb-20 text-center">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="scroll-fade mb-16 text-center">
         <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
           {sectionContent.experience.title}
         </h2>
@@ -66,15 +88,9 @@ import { workExperience, services, sectionContent } from "../data/siteData";
         </p>
       </div>
 
-      <!-- Timeline Container -->
       <div class="relative">
-        <!-- Vertical Line (Desktop center line) -->
-        <div
-          class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/5 to-transparent -translate-x-1/2"
-        >
-        </div>
+        <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/5 to-transparent -translate-x-1/2"></div>
 
-        <!-- Experience Items -->
         <div class="space-y-0">
           {
             workExperience.map((job, index) => (
@@ -89,6 +105,42 @@ import { workExperience, services, sectionContent } from "../data/siteData";
             ))
           }
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="resume" class="py-24 bg-neutral-950 border-y border-white/5">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <div class="scroll-fade bg-neutral-900/60 border border-white/10 rounded-2xl p-8 md:p-10">
+        <p class="text-sm font-bold text-neutral-500 uppercase tracking-widest mb-4">
+          Recruiter Material
+        </p>
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-5">
+          {sectionContent.resume.title}
+        </h2>
+        <p class="text-neutral-400 text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+          {sectionContent.resume.description}
+        </p>
+
+        {
+          hasResume ? (
+            <a
+              href={siteConfig.resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center bg-white text-neutral-950 font-bold px-8 py-4 rounded-full hover:bg-neutral-200 transition-colors"
+            >
+              {sectionContent.resume.readyLabel}
+            </a>
+          ) : (
+            <span
+              aria-disabled="true"
+              class="inline-flex items-center justify-center bg-white/10 text-neutral-400 font-bold px-8 py-4 rounded-full border border-white/10 cursor-not-allowed"
+            >
+              {sectionContent.resume.pendingLabel}
+            </span>
+          )
+        }
       </div>
     </div>
   </section>

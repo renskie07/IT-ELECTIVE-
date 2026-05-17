@@ -10,7 +10,7 @@ import {
   techStack,
   sectionContent,
   stats,
-  trustPlatforms,
+  freelancePlatforms,
 } from "../data/siteData";
 
 // Icon SVGs for each category
@@ -67,7 +67,6 @@ const categories = [
 <section
   class="py-24 border-b border-white/5 bg-neutral-950 relative overflow-hidden"
 >
-  <!-- Subtle Background Pattern -->
   <div
     class="absolute inset-0 opacity-[0.02]"
     style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;);"
@@ -75,9 +74,7 @@ const categories = [
   </div>
 
   <div class="max-w-7xl mx-auto px-6 relative z-10">
-    <!-- Section Header -->
     <div class="scroll-fade mb-16 text-center max-w-3xl mx-auto">
-      <!-- Badge -->
       <div
         class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full text-sm text-neutral-400 mb-6"
       >
@@ -95,17 +92,14 @@ const categories = [
         >
         <span>{sectionContent.techStackSection.badge}</span>
       </div>
-      <!-- Title -->
       <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
         {sectionContent.techStackSection.title}
       </h2>
-      <!-- Subtitle -->
       <p class="text-neutral-400 text-lg leading-relaxed">
         {sectionContent.techStackSection.subtitle}
       </p>
     </div>
 
-    <!-- Stats Bar -->
     <div class="scroll-fade grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
       {
         stats.map((stat) => (
@@ -121,7 +115,6 @@ const categories = [
       }
     </div>
 
-    <!-- Category Panels Grid -->
     <div class="scroll-fade grid grid-cols-1 lg:grid-cols-3 gap-8">
       {
         categories.map((category) => {
@@ -172,15 +165,21 @@ const categories = [
       }
     </div>
 
-    <!-- Trust Platforms Footer -->
     <div class="mt-16 text-center">
-      <p class="text-sm text-neutral-500 mb-6">Trusted platforms I work with</p>
+      <p class="text-sm text-neutral-500 mb-6">
+        Freelance profiles being prepared
+      </p>
       <div
-        class="flex flex-wrap justify-center items-center gap-8 opacity-50 grayscale hover:opacity-70 hover:grayscale-0 transition-all duration-500"
+        class="flex flex-wrap justify-center items-center gap-3"
       >
         {
-          trustPlatforms.map((platform) => (
-            <div class="text-neutral-400 font-semibold text-lg">{platform}</div>
+          freelancePlatforms.map((platform) => (
+            <span
+              aria-disabled="true"
+              class="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs font-medium text-neutral-500"
+            >
+              {platform.name}: {platform.status}
+            </span>
           ))
         }
       </div>

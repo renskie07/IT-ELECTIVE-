@@ -1,12 +1,4 @@
 ---
-// =============================================================================
-// SERVICE CARD COMPONENT
-// =============================================================================
-// Displays individual service offerings with icon, title, and description.
-// Features a spotlight hover effect that follows the mouse cursor.
-// Props: title, icon (key from icons map), description
-// =============================================================================
-
 interface Props {
   title: string;
   icon: string;
@@ -15,63 +7,45 @@ interface Props {
 
 const { title, icon, description } = Astro.props;
 
-// Icon Mapping - Maps icon keys to Lucide SVG icons
 const icons: Record<string, string> = {
   code: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
   workflow: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>`,
   server: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>`,
-  user: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`,
   briefcase: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>`,
-  data: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><line x1="16" x2="16" y1="3" y2="21"/><line x1="3" x2="21" y1="8" y2="8"/><line x1="3" x2="21" y1="16" y2="16"/><line x1="8" x2="8" y1="3" y2="21"/></svg>`,
-  search: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>`,
   default: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>`,
 };
 
 const svgContent = icons[icon] || icons.default;
 ---
 
-<div
-  class="spotlight-card group relative h-full bg-neutral-950 border border-white/10 rounded-2xl overflow-hidden transition-colors duration-300"
->
-  <!-- Spotlight Gradient Overlay (follows mouse) -->
+<div class="spotlight-card group relative h-full bg-neutral-950 border border-white/10 rounded-2xl overflow-hidden transition-colors duration-300">
   <div
     class="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-300"
     style="background: radial-gradient(600px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(99, 102, 241, 0.15), transparent 40%);"
   >
   </div>
-
-  <!-- Border Spotlight Effect -->
   <div
     class="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
     style="background: radial-gradient(400px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(255, 255, 255, 0.1), transparent 40%);"
   >
   </div>
 
-  <!-- Card Content -->
-  <div
-    class="relative z-20 h-full p-8 flex flex-col bg-neutral-950/80 backdrop-blur-xl"
-  >
-    <!-- Icon Box -->
+  <div class="relative z-20 h-full p-8 flex flex-col bg-neutral-950/80 backdrop-blur-xl">
     <div
       class="mb-6 w-12 h-12 flex items-center justify-center text-white bg-white/5 rounded-lg border border-white/10 group-hover:bg-indigo-500/10 group-hover:border-indigo-500/30 group-hover:text-indigo-400 group-hover:scale-110 transition-all duration-500 ease-out"
       set:html={svgContent}
     />
 
-    <!-- Title -->
-    <h3
-      class="text-xl font-bold text-white mb-3 tracking-tight group-hover:text-indigo-200 transition-colors"
-    >
+    <h3 class="text-xl font-bold text-white mb-3 tracking-tight group-hover:text-indigo-200 transition-colors">
       {title}
     </h3>
 
-    <!-- Description -->
     <p class="text-neutral-400 text-sm leading-relaxed font-light">
       {description}
     </p>
   </div>
 </div>
 
-<!-- Spotlight Mouse Tracking Script -->
 <script>
   const cards = document.querySelectorAll(".spotlight-card");
 

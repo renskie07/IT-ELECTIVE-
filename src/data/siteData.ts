@@ -1,242 +1,253 @@
-// =============================================================================
-// SITE DATA - Central Configuration File
-// =============================================================================
-// This file contains ALL editable content for the portfolio website.
-// To update any text on the site, edit the relevant section below.
-// =============================================================================
+export type ProjectStatus = "Completed" | "In Progress";
 
-// -----------------------------------------------------------------------------
-// SITE CONFIG - Basic site information and social links
-// -----------------------------------------------------------------------------
+export interface Project {
+  title: string;
+  role: string;
+  status: ProjectStatus;
+  description: string;
+  problem: string;
+  solution: string;
+  contributions: string[];
+  outcome: string;
+  techStack: string[];
+  repoUrl: string;
+  demoUrl: string;
+  imagePath: string;
+  imageAlt: string;
+}
+
 export const siteConfig = {
   name: "Tom Joshua",
-  title: "IT Specialist & Technical VA",
-  description: "I bridge the gap between complex code and business operations. A portfolio of technical automation, web development, and system architecture.",
+  title: "Web Developer & IT Support Freelancer",
+  description:
+    "Portfolio of a web developer and IT support freelancer focused on responsive websites, workflow automation, troubleshooting, and practical technical operations.",
   email: "tomjatn@gmail.com",
-  calendlyUrl: "https://calendly.com/tomjatn/30min",
+  resumeUrl: "",
+  siteUrl: "https://tomjoshuas-projects.vercel.app/",
   social: {
-    github: "https://github.com/ttomon",
+    github: "https://github.com/ttomja/edu-portfolio.git",
     linkedin: "https://www.linkedin.com/in/tom-joshua-tumanan-221364315/",
-    // Freelance Platforms
-    upwork: "https://www.upwork.com/freelancers/~your-profile", // TODO: Add your Upwork profile URL
-    fiverr: "https://www.fiverr.com/your-profile", // TODO: Add your Fiverr profile URL
-    freelancer: "https://www.freelancer.com/u/your-profile", // TODO: Add your Freelancer profile URL
   },
 };
 
-// -----------------------------------------------------------------------------
-// NAV LINKS - Navigation menu items
-// -----------------------------------------------------------------------------
 export const navLinks = [
-  { name: "Services", href: "/#services" },
+  { name: "About", href: "/#about" },
   { name: "Projects", href: "/projects" },
+  { name: "Resume", href: "/#resume" },
   { name: "Credentials", href: "/credentials" },
 ];
 
-// -----------------------------------------------------------------------------
-// SECTION CONTENT - Titles and descriptions for each section
-// -----------------------------------------------------------------------------
-export const sectionContent = {
-  // Hero Section (Homepage banner)
-  hero: {
-    badge: "Technical Solutions Partner",
-    titleLine1: "Engineered for",
-    titleLine2: "Performance.",
-    description: "I architect seamless digital ecosystems. From high-performance web apps to automated business logistics, I build the technical backbone that allows your business to scale without friction.",
-    highlightedTerms: ["high-performance web apps", "automated business logistics"],
-    primaryCta: "Book a Discovery Call",
-    secondaryCta: "Get in Touch"
-  },
-
-  // Services Section
-  services: {
-    title: "My Technical Arsenal",
-  },
-
-  // Work Experience Section
-  experience: {
-    title: "Work Experience",
-    subtitle: "My professional journey and track record of delivering technical solutions."
-  },
-
-  // Education/Credentials Section
-  education: {
-    title: "Certifications & Education",
-    subtitle: "Verified credentials and certifications that validate my technical expertise and commitment to continuous learning."
-  },
-
-  // Tech Stack Section
-  techStackSection: {
-    title: "Technologies & Tools",
-    subtitle: "The software and frameworks I use to build scalable, automated systems.",
-    badge: "Professional Toolkit"
-  },
-
-  // Booking/Contact Section
-  booking: {
-    titleStart: "Ready to",
-    titleHighlight: "Upgrade?",
-    description: "Eliminate the friction in your business. Schedule a call and let's build your technical roadmap together.",
-    buttonOpen: "Open Calendar",
-    buttonClose: "Close Calendar"
-  },
-
-  // Footer Section
-  footer: {
-    ctaLine1: "Let's Build Something",
-    ctaLine2: "Extraordinary.",
-    ctaButton: "Get in Touch",
-    connectLabel: "Connect",
-    copyright: "All Rights Reserved."
-  },
-
-  // Projects Page
-  projectsPage: {
-    title: "All Projects",
-    description: "A deep dive into my technical portfolio. From full-stack applications to automation scripts, here is what I've built."
-  }
-};
-
-// -----------------------------------------------------------------------------
-// STATS - Numbers displayed in the Tech Stack section
-// -----------------------------------------------------------------------------
-export const stats = [
-  { value: "18+", label: "Tools Mastered", highlight: false },
-  { value: "3+", label: "Years Experience", highlight: false },
-  { value: "16+", label: "Projects Completed", highlight: false },
-  { value: "100%", label: "Client Satisfaction", highlight: false },
+export const freelancePlatforms = [
+  { name: "Upwork", status: "Coming soon" },
+  { name: "Fiverr", status: "Coming soon" },
+  { name: "Freelancer", status: "Coming soon" },
 ];
 
-// -----------------------------------------------------------------------------
-// TRUST PLATFORMS - Platforms shown in Tech Stack footer
-// -----------------------------------------------------------------------------
-export const trustPlatforms = ["Upwork", "Fiverr", "Freelancer", "LinkedIn"];
+export const sectionContent = {
+  hero: {
+    badge: "Available for web, IT support, and automation work",
+    titleLine1: "Web Developer",
+    titleLine2: "& IT Support Freelancer",
+    description:
+      "I build responsive websites, organize technical workflows, and troubleshoot systems for teams that need practical, reliable support.",
+    primaryCta: "View Projects",
+    resumeCta: "Resume Coming Soon",
+    contactCta: "Contact Me",
+    proofPoints: [
+      "Astro, TypeScript, Tailwind CSS",
+      "PHP and MySQL project work",
+      "IT support and workflow automation",
+    ],
+  },
+  about: {
+    title: "Practical technical support with visible project work.",
+    description:
+      "My portfolio focuses on hands-on work: building web interfaces, connecting tools, documenting technical decisions, and supporting users when systems need to run smoothly.",
+    highlights: [
+      "I can build and maintain responsive sites using modern frontend tooling.",
+      "I can support IT operations such as setup, troubleshooting, documentation, and user support.",
+      "I can automate repetitive workflows across spreadsheets, CRMs, forms, and admin tools.",
+    ],
+  },
+  services: {
+    title: "Core Strengths",
+    subtitle:
+      "Focused capabilities that match web development, IT support, and technical operations roles.",
+  },
+  experience: {
+    title: "Experience",
+    subtitle:
+      "Work and training that show technical support, implementation, and communication practice.",
+  },
+  education: {
+    title: "Certifications & Education",
+    subtitle:
+      "Verified credentials that support my IT troubleshooting and systems foundation.",
+  },
+  techStackSection: {
+    title: "Technologies & Tools",
+    subtitle:
+      "Tools I use or practice with for websites, support work, automation, and technical operations.",
+    badge: "Technical Toolkit",
+  },
+  resume: {
+    title: "Resume",
+    description:
+      "A downloadable resume will be added here. For now, the site keeps a visible recruiter-ready resume section without linking to a missing file.",
+    readyLabel: "Download Resume",
+    pendingLabel: "Resume Coming Soon",
+  },
+  footer: {
+    ctaLine1: "Need a web developer",
+    ctaLine2: "or technical support freelancer?",
+    ctaButton: "Email Me",
+    connectLabel: "Professional links",
+    copyright: "All Rights Reserved.",
+  },
+  projectsPage: {
+    title: "Project Proof",
+    description:
+      "A closer look at selected work, including the problem, solution, stack, contribution, and current proof links.",
+  },
+};
 
-// -----------------------------------------------------------------------------
-// TECH STACK - Tools organized by category
-// -----------------------------------------------------------------------------
+export const stats = [
+  { value: "2", label: "Featured projects documented", highlight: false },
+  { value: "18+", label: "Tools practiced", highlight: false },
+  { value: "2", label: "Verified credentials", highlight: false },
+  { value: "Open", label: "Freelance and junior roles", highlight: true },
+];
+
 export const techStack = {
   automation: {
     title: "Automation & CRM",
-    description: "Streamlining business processes",
+    description: "Workflow support and operations",
     color: "emerald",
-    tools: ["Zapier", "Make.com", "n8n", "ActiveCampaign", "HubSpot", "Google App Script"]
+    tools: ["Zapier", "Make.com", "n8n", "ActiveCampaign", "HubSpot", "Google Apps Script"],
   },
   development: {
-    title: "Development",
-    description: "Building scalable applications",
+    title: "Web Development",
+    description: "Frontend and full-stack basics",
     color: "blue",
-    tools: ["Astro", "React", "TypeScript", "Tailwind CSS", "Node.js", "PHP"]
+    tools: ["Astro", "React", "TypeScript", "Tailwind CSS", "Node.js", "PHP"],
   },
   admin: {
-    title: "Admin & Ops",
-    description: "Managing operations efficiently",
+    title: "IT & Admin Tools",
+    description: "Support and team operations",
     color: "purple",
-    tools: ["Notion", "Airtable", "Excel/Sheets", "Asana", "Jira", "Slack"]
-  }
+    tools: ["Notion", "Airtable", "Excel/Sheets", "Asana", "Jira", "Slack"],
+  },
 };
 
-// -----------------------------------------------------------------------------
-// SERVICES - Service cards displayed on homepage
-// -----------------------------------------------------------------------------
 export const services = [
   {
-    title: "Web Development",
+    title: "Responsive Web Builds",
     icon: "code",
-    description: "Building fast, responsive websites using modern stacks (Astro, React, Tailwind). I don't just use templates; I code custom solutions."
+    description:
+      "Build clean portfolio, business, and project pages with Astro, TypeScript, Tailwind CSS, and practical frontend structure.",
   },
   {
-    title: "Technical Automation",
-    icon: "workflow",
-    description: "Streamlining business workflows. I connect your tools (CRM, Email, Sheets) to save you hours of manual data entry."
-  },
-  {
-    title: "System Administration",
+    title: "IT Support",
     icon: "server",
-    description: "Managing databases, hosting environments, and troubleshooting software issues. I handle the tech headaches so you don't have to."
+    description:
+      "Troubleshoot hardware, software, account, and setup issues with clear documentation and steady communication.",
   },
   {
-    title: "General Virtual Assistant",
-    icon: "user",
-    description: "Reliable administrative support handling email management, scheduling, and customer communication to keep your operations running smoothly."
+    title: "Workflow Automation",
+    icon: "workflow",
+    description:
+      "Connect tools, forms, spreadsheets, and CRM workflows to reduce repetitive admin work and manual handoffs.",
   },
   {
-    title: "Executive Assistant",
+    title: "Technical Operations",
     icon: "briefcase",
-    description: "High-level support for entrepreneurs. I manage calendars, organize meetings, and handle sensitive communications so you can focus on growth."
+    description:
+      "Support day-to-day technical tasks such as documentation, data cleanup, system checks, and tool organization.",
   },
-  {
-    title: "Data Entry Specialist",
-    icon: "data",
-    description: "Accurate and fast data processing. Transcribing information, managing spreadsheets, and maintaining database integrity with high attention to detail."
-  },
-  {
-    title: "SEO Support",
-    icon: "search",
-    description: "Optimizing content and managing on-page SEO basics to improve visibility. Keyword research, meta tags, and site audits."
-  }
 ];
 
-// -----------------------------------------------------------------------------
-// PROJECTS - Portfolio projects
-// -----------------------------------------------------------------------------
-export const projects = [
+export const projects: Project[] = [
   {
     title: "1Up Blood Donation System",
     role: "Lead Developer",
-    status: "Ongoing",
-    description: "A digital management system for blood banks. It helps staff track inventory levels in real-time and schedule donors efficiently. Built to replace manual record-keeping.",
+    status: "In Progress",
+    description:
+      "A PHP and MySQL management system for blood donation records, donor scheduling, and inventory visibility.",
+    problem:
+      "Blood bank staff need a clearer way to track donor records, scheduling, and blood inventory instead of relying on scattered manual records.",
+    solution:
+      "The system organizes key donation workflows into a staff-facing web interface with database-backed records and inventory-focused screens.",
+    contributions: [
+      "Planned the database structure for donor, blood, and scheduling data.",
+      "Built the core PHP/MySQL screens for managing records and operational flow.",
+      "Designed the interface around staff tasks instead of a generic template layout.",
+    ],
+    outcome:
+      "The project demonstrates database design, CRUD workflows, and a practical public-service use case. More source documentation will be added after cleanup.",
     techStack: ["PHP", "MySQL", "Bootstrap", "Database Design"],
-    link: "https://1up-donation.free.nf/?i=1",
-    imagePath: "/1up-project.png"
+    repoUrl: "",
+    demoUrl: "https://1up-donation.free.nf/?i=1",
+    imagePath: "/1up-project.webp",
+    imageAlt: "Dashboard screenshot of the 1Up Blood Donation System",
   },
   {
     title: "Sky Pulse Weather App",
     role: "Mobile Developer",
     status: "Completed",
-    description: "A straightforward weather app that provides local forecasts. It connects to weather APIs to show real-time conditions based on the user's location.",
-    techStack: ["Mobile Dev", "API Integration", "UI Design"],
-    link: "https://drive.google.com/file/d/1YnaVtw5lgnPo2T6tb5N425dDz4NUeMGP/view?usp=sharing",
-    imagePath: "/sky-pulse.png"
-  }
+    description:
+      "A mobile weather app concept that displays local forecast information through a weather API integration.",
+    problem:
+      "Users need a simple way to check local weather conditions without navigating through a complex dashboard.",
+    solution:
+      "The app presents weather information in a focused mobile interface with API-powered forecast data and lightweight visual hierarchy.",
+    contributions: [
+      "Designed the mobile UI flow for quick forecast scanning.",
+      "Integrated weather data into the app experience.",
+      "Packaged the project demo for review through a shared build link.",
+    ],
+    outcome:
+      "The project shows mobile UI thinking, API integration practice, and a user-centered approach to a small utility app.",
+    techStack: ["Mobile Development", "Weather API", "UI Design"],
+    repoUrl: "",
+    demoUrl:
+      "https://drive.google.com/file/d/1YnaVtw5lgnPo2T6tb5N425dDz4NUeMGP/view?usp=sharing",
+    imagePath: "/sky-pulse.webp",
+    imageAlt: "Mobile screens from the Sky Pulse Weather App",
+  },
 ];
 
-// -----------------------------------------------------------------------------
-// CREDENTIALS - Certifications and education
-// -----------------------------------------------------------------------------
 export const credentials = [
   {
     title: "Computer Hardware Basics",
     issuer: "Cisco Networking Academy",
     year: "2026",
     imagePath: "/hardware-basics-cisco.jpg",
-    link: "https://www.credly.com/badges/abbfe97d-e2df-4e78-bf9f-f3b942b4ef68/public_url"
+    link: "https://www.credly.com/badges/abbfe97d-e2df-4e78-bf9f-f3b942b4ef68/public_url",
   },
   {
     title: "Computer Systems Servicing NC II",
     issuer: "TESDA",
     year: "2025",
     imagePath: "/computer-systems-servicing-nc-ii.jpg",
-    link: "https://t2mis.tesda.gov.ph/Learners/S/770073006C007900510041004D00460067006700550071006E006C0066007400440057004D006D006E006E006C0057006D003600490051004900730051006D0049006200590052004100340055004B003300450073003D00"
-  }
+    link: "https://t2mis.tesda.gov.ph/Learners/S/770073006C007900510041004D00460067006700550071006E006C0066007400440057004D006D006E006E006C0057006D003600490051004900730051006D0049006200590052004100340055004B003300450073003D00",
+  },
 ];
 
-// -----------------------------------------------------------------------------
-// WORK EXPERIENCE - Employment history
-// -----------------------------------------------------------------------------
 export const workExperience = [
   {
-    role: "Freelance Technical VA",
-    company: "Upwork / Direct Clients",
+    role: "Freelance Web & IT Support",
+    company: "Independent Projects",
     period: "2026 - Present",
-    description: "Providing technical assistance to businesses, managing CRM systems, and automating workflows. specialized in troubleshooting and system optimization.",
-    skills: ["Automation", "CRM Management", "Technical Support"]
+    description:
+      "Building small web projects, supporting technical workflows, organizing tool setups, and documenting practical fixes for clients and personal project work.",
+    skills: ["Web Development", "Technical Support", "Workflow Automation"],
   },
   {
     role: "IT Support Intern",
     company: "Local Tech Firm",
     period: "2025 - 2026",
-    description: "Assisted in network configuration, hardware troubleshooting, and software installation for office systems.",
-    skills: ["Network Config", "Hardware Repair", "Windows Admin"]
-  }
+    description:
+      "Assisted with hardware troubleshooting, software installation, network configuration, and user support for office systems.",
+    skills: ["Hardware Support", "Windows Admin", "Network Basics"],
+  },
 ];
