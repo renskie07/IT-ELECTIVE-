@@ -29,8 +29,9 @@ Most portfolio content is managed in `src/data/siteData.ts`.
 
 ## Current Routes
 
-- `/` - homepage, profile, skills, experience, resume placeholder, contact
+- `/` - homepage, profile, skills, experience, contact
 - `/projects` - detailed project proof
+- `/resume` - dedicated resume placeholder and resume guidance
 - `/credentials` - certifications and education
 
 ## Verification

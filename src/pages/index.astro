@@ -10,13 +10,10 @@ import {
   workExperience,
   services,
   sectionContent,
-  siteConfig,
 } from "../data/siteData";
-
-const hasResume = siteConfig.resumeUrl.length > 0;
 ---
 
-<Layout title="Tom Joshua | Web Developer & IT Support Freelancer">
+<Layout title="Tom Tumanan | Web Developer & IT Support Freelancer">
   <Navbar />
   <Hero />
 
@@ -105,42 +102,6 @@ const hasResume = siteConfig.resumeUrl.length > 0;
             ))
           }
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="resume" class="py-24 bg-neutral-950 border-y border-white/5">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-      <div class="scroll-fade bg-neutral-900/60 border border-white/10 rounded-2xl p-8 md:p-10">
-        <p class="text-sm font-bold text-neutral-500 uppercase tracking-widest mb-4">
-          Recruiter Material
-        </p>
-        <h2 class="text-3xl md:text-5xl font-bold text-white mb-5">
-          {sectionContent.resume.title}
-        </h2>
-        <p class="text-neutral-400 text-lg leading-relaxed max-w-2xl mx-auto mb-8">
-          {sectionContent.resume.description}
-        </p>
-
-        {
-          hasResume ? (
-            <a
-              href={siteConfig.resumeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center justify-center bg-white text-neutral-950 font-bold px-8 py-4 rounded-full hover:bg-neutral-200 transition-colors"
-            >
-              {sectionContent.resume.readyLabel}
-            </a>
-          ) : (
-            <span
-              aria-disabled="true"
-              class="inline-flex items-center justify-center bg-white/10 text-neutral-400 font-bold px-8 py-4 rounded-full border border-white/10 cursor-not-allowed"
-            >
-              {sectionContent.resume.pendingLabel}
-            </span>
-          )
-        }
       </div>
     </div>
   </section>

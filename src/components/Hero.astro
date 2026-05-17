@@ -2,7 +2,6 @@
 import { siteConfig, sectionContent } from "../data/siteData";
 
 const hero = sectionContent.hero;
-const hasResume = siteConfig.resumeUrl.length > 0;
 ---
 
 <header class="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-32 relative overflow-hidden">
@@ -47,26 +46,6 @@ const hasResume = siteConfig.resumeUrl.length > 0;
         >
           {hero.primaryCta}
         </a>
-
-        {
-          hasResume ? (
-            <a
-              href={siteConfig.resumeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-neutral-700 hover:border-neutral-500 hover:bg-neutral-800 transition-all text-neutral-300 hover:text-white font-medium"
-            >
-              Download Resume
-            </a>
-          ) : (
-            <a
-              href="#resume"
-              class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-neutral-700 hover:border-neutral-500 hover:bg-neutral-800 transition-all text-neutral-300 hover:text-white font-medium"
-            >
-              {hero.resumeCta}
-            </a>
-          )
-        }
 
         <a
           href={`mailto:${siteConfig.email}`}

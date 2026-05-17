@@ -33,7 +33,7 @@ export const siteConfig = {
 export const navLinks = [
   { name: "About", href: "/#about" },
   { name: "Projects", href: "/projects" },
-  { name: "Resume", href: "/#resume" },
+  { name: "Resume", href: "/resume" },
   { name: "Credentials", href: "/credentials" },
 ];
 
@@ -51,7 +51,6 @@ export const sectionContent = {
     description:
       "I build responsive websites, organize technical workflows, and troubleshoot systems for teams that need practical, reliable support.",
     primaryCta: "View Projects",
-    resumeCta: "Resume Coming Soon",
     contactCta: "Contact Me",
     proofPoints: [
       "Astro, TypeScript, Tailwind CSS",
@@ -93,7 +92,7 @@ export const sectionContent = {
   resume: {
     title: "Resume",
     description:
-      "A downloadable resume will be added here. For now, the site keeps a visible recruiter-ready resume section without linking to a missing file.",
+      "A downloadable resume will be added here. For now, this page keeps a recruiter-ready resume placeholder without linking to a missing file.",
     readyLabel: "Download Resume",
     pendingLabel: "Resume Coming Soon",
   },
