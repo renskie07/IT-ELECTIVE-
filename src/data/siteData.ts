@@ -28,7 +28,7 @@ export interface EducationTopic {
 
 export const siteConfig = {
   name: "Renier C. Nigparanon",
-  title: "4BSIT-2 | BS Information Technology",
+  title: "Web Portfolio",
   description:
     "A student portfolio highlighting academic resume, capstone storytelling, and practical experience for 4BSIT-2.",
   email: "reniernigs07@gmail.com",
@@ -37,7 +37,6 @@ export const siteConfig = {
   social: {
     github: "",
     linkedin: "",
-    facebook: "https://www.facebook.com/kyudipie",
   },
 };
 
@@ -45,7 +44,7 @@ export const navLinks = [
   { name: "About", href: "/#about" },
   { name: "Projects", href: "/projects" },
   { name: "Resume", href: "/resume" },
-  { name: "4BSIT-2", href: "/education" },
+  { name: "Education", href: "/education" },
 ];
 
 export const freelancePlatforms = [
@@ -121,9 +120,9 @@ export const sectionContent = {
     copyright: "All Rights Reserved.",
   },
   projectsPage: {
-    title: "Capstone & Project Work",
+    title: "Portfolio & Resume",
     description:
-      "Based on PROPOSAL STREETFIX(1).pdf, this section explains the StreetFix capstone, the core problem, technical solution, and the visuals supporting the project narrative.",
+      "Academic profile, Street Fix capstone UI, and IT Elective 6 coursework. Contact details are limited to protect privacy.",
   },
 };
 

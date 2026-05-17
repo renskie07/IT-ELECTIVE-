@@ -6,44 +6,164 @@ import Footer from "../components/Footer.astro";
 import { projects, sectionContent } from "../data/siteData";
 ---
 
-<Layout title="Projects | Renier C. Nigparanon">
+<Layout title="Portfolio | Renier C. Nigparanon">
   <Navbar />
 
-  <div class="pt-28 md:pt-32 pb-10 px-4 sm:px-6">
-    <div class="scroll-fade max-w-6xl mx-auto text-center">
-      <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+  <section class="pt-28 md:pt-32 pb-10 px-4 sm:px-6">
+    <div class="scroll-fade max-w-6xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-400/20 text-emerald-300 text-xs uppercase tracking-[0.3em] mb-6">
+        4BSIT-2 · Web Portfolio
+      </div>
+      <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
         {sectionContent.projectsPage.title}
       </h1>
-      <p class="text-neutral-400 max-w-2xl mx-auto text-lg leading-relaxed">
+      <p class="text-neutral-400 max-w-3xl text-lg leading-relaxed">
         {sectionContent.projectsPage.description}
       </p>
     </div>
-  </div>
+  </section>
 
-  <section class="pb-24 md:pb-32 relative">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="scroll-fade divide-y divide-white/5">
-        {
-          projects.map((project, index) => (
-            <ProjectSpotlight
-              index={index}
-              title={project.title}
-              role={project.role}
-              status={project.status}
-              description={project.description}
-              problem={project.problem}
-              solution={project.solution}
-              contributions={project.contributions}
-              outcome={project.outcome}
-              techStack={project.techStack}
-              repoUrl={project.repoUrl}
-              demoUrl={project.demoUrl}
-              imagePath={project.imagePath}
-              imageAlt={project.imageAlt}
-            />
-          ))
-        }
+  <section class="pb-24 md:pb-32 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto grid gap-10 xl:grid-cols-[1.6fr_0.9fr]">
+      <div class="scroll-fade rounded-[2rem] border border-white/10 bg-neutral-950/70 p-8 shadow-2xl">
+        <div class="mb-8">
+          <h2 class="text-3xl font-bold text-white mb-4">Street Fix — UI Capstone</h2>
+          <p class="text-neutral-400 leading-relaxed max-w-3xl">
+            Mobile app for reporting road and sidewalk issues in the community. Features GPS pinning, photo reports, AI-assisted damage detection, community forums by barangay, admin analytics, and credibility scoring.
+          </p>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+          <figure class="rounded-3xl overflow-hidden border border-white/10 bg-slate-950 shadow-xl">
+            <img src="/streetfix/streetfix-login.png" alt="Street Fix login screen" class="w-full h-56 object-cover" />
+            <figcaption class="p-4 text-sm text-neutral-300">Login</figcaption>
+          </figure>
+          <figure class="rounded-3xl overflow-hidden border border-white/10 bg-slate-950 shadow-xl">
+            <img src="/streetfix/streetfix-dashboard.png" alt="Street Fix home dashboard" class="w-full h-56 object-cover" />
+            <figcaption class="p-4 text-sm text-neutral-300">Dashboard</figcaption>
+          </figure>
+          <figure class="rounded-3xl overflow-hidden border border-white/10 bg-slate-950 shadow-xl">
+            <img src="/streetfix/streetfix-report.png" alt="Street Fix report an issue screen" class="w-full h-56 object-cover" />
+            <figcaption class="p-4 text-sm text-neutral-300">Report Issue</figcaption>
+          </figure>
+          <figure class="rounded-3xl overflow-hidden border border-white/10 bg-slate-950 shadow-xl">
+            <img src="/streetfix/streetfix-analytics.png" alt="Street Fix analytics and prioritization" class="w-full h-56 object-cover" />
+            <figcaption class="p-4 text-sm text-neutral-300">Analytics</figcaption>
+          </figure>
+          <figure class="rounded-3xl overflow-hidden border border-white/10 bg-slate-950 shadow-xl">
+            <img src="/streetfix/streetfix-forums.png" alt="Street Fix community forums" class="w-full h-56 object-cover" />
+            <figcaption class="p-4 text-sm text-neutral-300">Forums</figcaption>
+          </figure>
+          <figure class="rounded-3xl overflow-hidden border border-white/10 bg-slate-950 shadow-xl">
+            <img src="/streetfix/streetfix-profile.png" alt="Street Fix user profile and credibility score" class="w-full h-56 object-cover" />
+            <figcaption class="p-4 text-sm text-neutral-300">Profile</figcaption>
+          </figure>
+        </div>
       </div>
+
+      <aside class="scroll-fade space-y-6">
+        <div class="rounded-[2rem] border border-white/10 bg-neutral-950/70 p-8 shadow-2xl">
+          <img src="/profile/picture.png" alt="Renier C. Nigparanon" class="mb-6 w-full rounded-3xl border border-white/10 object-cover h-72" />
+          <h3 class="text-3xl font-bold text-white mb-2">Renier C. Nigparanon</h3>
+          <p class="text-neutral-400 mb-6">4BSIT-2 student focused on capstone design and academic portfolio storytelling.</p>
+
+          <div class="grid gap-3 text-sm text-neutral-300">
+            <div class="rounded-3xl bg-white/5 border border-white/10 p-4">
+              <h4 class="font-semibold text-white mb-3">Core Skills</h4>
+              <div class="grid gap-2 sm:grid-cols-2">
+                <span>Microsoft Office</span>
+                <span>PowerPoint</span>
+                <span>Excel</span>
+                <span>Communication</span>
+                <span>Flexibility</span>
+                <span>Teamwork</span>
+              </div>
+            </div>
+            <div class="rounded-3xl bg-white/5 border border-white/10 p-4">
+              <h4 class="font-semibold text-white mb-3">Interests</h4>
+              <div class="grid gap-2 sm:grid-cols-2">
+                <span>UI Design</span>
+                <span>Community Tech</span>
+                <span>App Workflow</span>
+                <span>Project Storytelling</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-[2rem] border border-white/10 bg-neutral-950/70 p-8 shadow-2xl space-y-6">
+          <div>
+            <h4 class="text-xl font-semibold text-white mb-3">Profile Summary</h4>
+            <p class="text-neutral-400 leading-relaxed">
+              BSIT student combining capstone UI work with academic study. I focus on practical project delivery, portfolio presentation, and community reporting tools.
+            </p>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold text-white mb-3">Education</h4>
+            <div class="space-y-4 text-neutral-400 text-sm leading-7">
+              <div>
+                <p class="font-semibold text-white">Bachelor of Science in Information Technology</p>
+                <p>New Era University — 2025 - Present</p>
+              </div>
+              <div>
+                <p class="font-semibold text-white">IT Elective 6 — Cybersecurity & Threat Frameworks</p>
+                <p>Academic coursework in adversarial mindset, security models, MITRE ATT&CK, and incident lifecycle.</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold text-white mb-3">Featured Project</h4>
+            <div class="text-neutral-400 text-sm leading-7 space-y-3">
+              <div>
+                <p class="font-semibold text-white">Street Fix — Mobile UI Capstone</p>
+                <p>Community reporting app for potholes, road cracks, and sidewalks with photo reports and analytics.</p>
+              </div>
+              <div>
+                <p class="font-semibold text-white">Web Portfolio</p>
+                <p>Responsive portfolio layout showcasing coursework, capstone UI screens, and academic resume.</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold text-white mb-3">Technical Competencies</h4>
+            <div class="grid gap-3 text-neutral-400 text-sm leading-7">
+              <div>
+                <p class="font-semibold text-white">Development & Design</p>
+                <p>HTML, CSS, Astro, Tailwind, responsive layout, UI storytelling.</p>
+              </div>
+              <div>
+                <p class="font-semibold text-white">Cybersecurity Knowledge</p>
+                <p>MITRE ATT&CK tactics, phishing, exploit public apps, valid accounts, execution, persistence, discovery.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="pb-24 md:pb-32 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto scroll-fade divide-y divide-white/5">
+      {
+        projects.map((project, index) => (
+          <ProjectSpotlight
+            index={index}
+            title={project.title}
+            role={project.role}
+            status={project.status}
+            description={project.description}
+            problem={project.problem}
+            solution={project.solution}
+            contributions={project.contributions}
+            outcome={project.outcome}
+            techStack={project.techStack}
+            repoUrl={project.repoUrl}
+            demoUrl={project.demoUrl}
+            imagePath={project.imagePath}
+            imageAlt={project.imageAlt}
+          />
+        ))
+      }
     </div>
   </section>
 
