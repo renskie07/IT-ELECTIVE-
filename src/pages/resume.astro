@@ -18,68 +18,39 @@ const hasResume = siteConfig.resumeUrl.length > 0;
       <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
         {sectionContent.resume.title}
       </h1>
-      <p class="text-neutral-400 max-w-2xl mx-auto text-lg leading-relaxed">
-        {sectionContent.resume.description}
-      </p>
     </div>
   </div>
 
   <section class="pb-24 md:pb-32">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6">
-      <div class="scroll-fade grid lg:grid-cols-[0.9fr_1.1fr] gap-6 items-stretch">
-        <div class="rounded-2xl border border-white/10 bg-neutral-900/70 p-7 md:p-8">
-          <h2 class="text-2xl font-bold text-white mb-4">
-            Resume Status
-          </h2>
-          <p class="text-neutral-400 leading-relaxed mb-6">
-            The download will stay disabled until a real resume file or URL is added to
-            <span class="font-mono text-neutral-300"> siteConfig.resumeUrl</span>.
-          </p>
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="scroll-fade rounded-2xl border border-white/10 bg-neutral-900/70 p-7 md:p-8 text-center">
+        <h2 class="text-2xl font-bold text-white mb-4">
+          Resume Status
+        </h2>
+        <p class="text-neutral-400 leading-relaxed mb-6">
+          The download will stay disabled until a real resume file or URL is added to
+          <span class="font-mono text-neutral-300"> siteConfig.resumeUrl</span>.
+        </p>
 
-          {
-            hasResume ? (
-              <a
-                href={siteConfig.resumeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center justify-center bg-white text-neutral-950 font-bold px-8 py-4 rounded-full hover:bg-neutral-200 transition-colors"
-              >
-                {sectionContent.resume.readyLabel}
-              </a>
-            ) : (
-              <span
-                aria-disabled="true"
-                class="inline-flex items-center justify-center bg-white/10 text-neutral-400 font-bold px-8 py-4 rounded-full border border-white/10 cursor-not-allowed"
-              >
-                {sectionContent.resume.pendingLabel}
-              </span>
-            )
-          }
-        </div>
-
-        <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-7 md:p-8">
-          <h2 class="text-2xl font-bold text-white mb-5">
-            What the resume should include
-          </h2>
-          <ul class="space-y-3 text-neutral-400">
-            <li class="flex gap-3">
-              <span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-indigo-400"></span>
-              <span>Target role: Web Developer & IT Support Freelancer.</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-indigo-400"></span>
-              <span>Featured project proof with links to this portfolio and source code.</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-indigo-400"></span>
-              <span>Technical skills grouped by development, IT support, automation, and admin tools.</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-indigo-400"></span>
-              <span>Credentials, internship experience, freelance work, and contact links.</span>
-            </li>
-          </ul>
-        </div>
+        {
+          hasResume ? (
+            <a
+              href={siteConfig.resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center bg-white text-neutral-950 font-bold px-8 py-4 rounded-full hover:bg-neutral-200 transition-colors"
+            >
+              {sectionContent.resume.readyLabel}
+            </a>
+          ) : (
+            <span
+              aria-disabled="true"
+              class="inline-flex items-center justify-center bg-white/10 text-neutral-400 font-bold px-8 py-4 rounded-full border border-white/10 cursor-not-allowed"
+            >
+              {sectionContent.resume.pendingLabel}
+            </span>
+          )
+        }
       </div>
     </div>
   </section>
