@@ -27,8 +27,8 @@ export interface EducationTopic {
 }
 
 export const siteConfig = {
-  name: "Tom Joshua",
-  title: "Web Developer & IT Support Freelancer",
+  name: "Tom Tumanan | PORTFOLIO",
+  title: "Freelance & IT Support",
   description:
     "Portfolio of a web developer and IT support freelancer focused on responsive websites, workflow automation, troubleshooting, and practical technical operations.",
   email: "tomjatn@gmail.com",
