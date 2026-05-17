@@ -184,27 +184,27 @@ export const services = [
 
 export const projects: Project[] = [
   {
-    title: "1Up Blood Donation System",
-    role: "Lead Developer",
-    status: "In Progress",
+    title: "Samgyupsal POS & Inventory Monitoring System",
+    role: "Full-Stack Developer",
+    status: "Completed",
     description:
-      "A PHP and MySQL management system for blood donation records, donor scheduling, and inventory visibility.",
+      "A web-based POS and inventory monitoring system for a Korean food business, built around branch operations, sales tracking, and FEFO inventory control.",
     problem:
-      "Blood bank staff need a clearer way to track donor records, scheduling, and blood inventory instead of relying on scattered manual records.",
+      "Food inventory cannot be managed safely with a single stock number because products may have different expiration dates, branch locations, and sales velocity.",
     solution:
-      "The system organizes key donation workflows into a staff-facing web interface with database-backed records and inventory-focused screens.",
+      "The system separates product records from expiration-aware inventory batches, applies FEFO stock deduction during checkout, and surfaces low-stock, near-expiry, and predicted stockout alerts.",
     contributions: [
-      "Planned the database structure for donor, blood, and scheduling data.",
-      "Built the core PHP/MySQL screens for managing records and operational flow.",
-      "Designed the interface around staff tasks instead of a generic template layout.",
+      "Built the React frontend for dashboard, POS, inventory, reports, products, and user workflows.",
+      "Implemented Supabase Auth, PostgreSQL tables, RLS policies, and RPC-backed checkout and stock-in flows.",
+      "Added FEFO batch deduction, sale-to-batch allocation records, inventory movements, and sales-velocity alert logic.",
     ],
     outcome:
-      "The project demonstrates database design, CRUD workflows, and a practical public-service use case. More source documentation will be added after cleanup.",
-    techStack: ["PHP", "MySQL", "Bootstrap", "Database Design"],
-    repoUrl: "",
-    demoUrl: "https://1up-donation.free.nf/?i=1",
-    imagePath: "/1up-project.webp",
-    imageAlt: "Dashboard screenshot of the 1Up Blood Donation System",
+      "The deployed capstone demonstrates a production-style Supabase backend, role-aware access, multi-branch inventory monitoring, FEFO checkout behavior, and Vercel deployment.",
+    techStack: ["React", "Supabase", "PostgreSQL", "RLS", "Vercel", "FEFO Logic"],
+    repoUrl: "https://github.com/ttomja/samgyupsal-pos-system.git",
+    demoUrl: "https://samgyupsal.vercel.app/",
+    imagePath: "/samgyupsal-pos.png",
+    imageAlt: "Login screen of the Samgyupsal Korean Food POS and inventory monitoring system",
   },
   {
     title: "Sky Pulse Weather App",
